@@ -77,4 +77,19 @@ Get-FileHash file -Algorithm SHA1;
 Get-FileHash file -Algorithm MD5
 ```
 
+### Linux CLI
+```bash
+sha256sum file
+sha1sum file
+md5sum file
+```
+
+### Hash Usage
+- SHA256 is preferred for reputation checks (e.g., VirusTotal, Talos)
+- MD5 and SHA1 are outdated but may still be accepted
+- Any file change—even one byte—produces a completely different hash
+- Hashes are used for detection, validation, and correlation across tools
+
+---
+> Know how to generate and use hashes on both Windows and Linux. Hashing is a core skill in incident response and malware analysis.
 
