@@ -68,4 +68,6 @@ Extract the URL between `href="..."` for clean, safe copying.
 Get-FileHash C:\path\to\file -Algorithm SHA256
 Get-FileHash C:\path\to\file -Algorithm SHA1
 Get-FileHash C:\path\to\file -Algorithm MD5
+```
+
 
