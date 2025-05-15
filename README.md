@@ -9,9 +9,9 @@ If you are a representative of Security Blue Team and believe any content here v
 ## 📘 Table of Contents
 
 - Security Fundamentals  
-  - [Physical Security](./security-fundamentals/physical-security/README.md)  
-  - [Endpoint Security](./security-fundamentals/endpoint-security/README.md)  
-  - [Security Controls](./security-fundamentals/security-controls/README.md)  
+  - [Physical Security](./security-fundamentals/physical-security/README.m)  
+  - [Endpoint Security](./security-fundamentals/endpoint-security/README.m)  
+  - [Security Controls](./security-fundamentals/security-controls/README.m)  
 
 - Email Security  
   - [Spam Filtering](./email-security/spam-filtering/README.md)  
