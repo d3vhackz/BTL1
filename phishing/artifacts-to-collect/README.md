@@ -1,62 +1,59 @@
 # Artifacts to Collect
 
-When investigating a phishing email, collecting the right artifacts is essential for threat hunting, intelligence sharing, and taking defensive actions. Below are the key categories and artifacts to retain.
+When investigating a phishing email, collecting the right artifacts is essential for further analysis, intelligence sharing, and implementing defensive controls. Below are the key categories and artifacts to retain.
 
 ---
 
-## 📧 Email Artifacts
+## Email Artifacts
 
 ### Sending Email Address
-- The address that sent or appears to have sent the email
-- May be spoofed; still useful for searching mail logs or security tools
+- The address that sent or appeared to send the email
+- May be spoofed, but still useful for searches and correlation
 
 ### Subject Line
-- Useful for identifying other emails in the same campaign
-- Can be used to search, detect, or block related phishing attempts
+- Can be used to identify related phishing emails or block future attempts
 
 ### Recipient Email Addresses
-- Identify who else received the phishing email
-- BCC is often used to hide recipients
-- Cross-reference sender + subject in email gateway to find affected mailboxes
+- Identify who else received the email
+- Check email gateway logs using sender and subject to find other recipients
 
-### Sending Server IP & Reverse DNS
-- Helps validate legitimacy of sending server
-- Use reverse DNS tools (e.g., MXToolbox) to identify hostname
+### Sending Server IP and Reverse DNS
+- Helps verify whether the sender domain matches the sending infrastructure
+- Use reverse DNS tools to resolve the hostname
 
 ### Reply-To Address
-- May differ from sending address
-- Often reveals attacker-controlled email for replies
+- Often differs from the spoofed sending address
+- Reveals the attacker's real destination for replies
 
-### Date & Time
-- Record timestamp for campaign correlation and pattern analysis
-- Helps identify other emails sent around the same time
+### Date and Time
+- Useful for correlating with other attack attempts or campaign timelines
+- Helps identify patterns of phishing activity
 
 ---
 
-## 📎 File Artifacts
+## File Artifacts
 
 ### Attachment Name
-- Include full filename and extension
-- Useful for blocking by name in EDR or email security tools
+- Record full file name and extension
+- May be used for blocking in EDR or mail filtering systems
 
 ### SHA256 Hash Value
-- Cryptographic fingerprint of the attachment
-- Use for reputation checks (e.g., VirusTotal, Talos)
-- SHA256 preferred over MD5 or SHA1 due to collision risks
+- Unique identifier for the file
+- Use for reputation checks (e.g., VirusTotal)
+- SHA256 is the standard—avoid MD5 and SHA1 due to known collisions
 
 ---
 
-## 🌐 Web Artifacts
+## Web Artifacts
 
 ### Full URLs
-- Copy exactly using "Copy Link" or from raw source
-- Used to analyze phishing pages, redirect chains, and payload delivery
+- Always copy the full link accurately; never retype manually
+- Source can be obtained via "Copy Link" or from the email header/source
 
 ### Root Domain
-- Helps identify malicious infrastructure
-- Useful when full URL is unavailable or for domain-based threat intelligence
+- Sometimes useful when the full URL isn't available
+- Can help determine if the domain is newly created, suspicious, or compromised
 
 ---
 
-> These artifacts are foundational for phishing investigations and will often be required on the BTL1 exam. Learn to extract and apply them with precision.
-
+> These artifacts are core to phishing investigations. Proper collection and documentation enables search, detection, response, and intelligence correlation.
