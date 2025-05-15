@@ -49,7 +49,7 @@ Use services like [DomainTools WHOIS](https://whois.domaintools.com/) to convert
 ### Method 2: Text Editor
 Search the raw email for:
 - `"http"` → Identifies hyperlinks
-- `"<a"` → HTML anchor tags
+- `"<a>"` → HTML anchor tags
 - Text near the link (e.g., “click here”) to locate the tag
 
 Extract the URL between `href="..."` for clean, safe copying.
