@@ -64,10 +64,17 @@ Extract the URL between `href="..."` for clean, safe copying.
 - MD5 and SHA1 hashes (legacy, still used by some tools)
 
 ### PowerShell (Windows)
+Run individually:
 ```powershell
 Get-FileHash C:\path\to\file -Algorithm SHA256
 Get-FileHash C:\path\to\file -Algorithm SHA1
 Get-FileHash C:\path\to\file -Algorithm MD5
+```
+Run all at once:
+```powershell
+Get-FileHash file -Algorithm SHA256;
+Get-FileHash file -Algorithm SHA1;
+Get-FileHash file -Algorithm MD5
 ```
 
 
