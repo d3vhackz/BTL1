@@ -4,5 +4,5 @@ These study notes are original summaries and interpretations created for persona
 
 If you are a representative of Security Blue Team and believe any content here violates your rights, please contact me directly for prompt removal or correction.
 
-- [Security Fundamentals](./security-fundamentals)
+- [Security Fundamentals]
   - [Physical Security](./security-fundamentals/physical-security/README.md)
