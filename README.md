@@ -42,6 +42,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Email Protocols & Anatomy](./phishing/email-protocols-anatomy/README.md)
   - [Artifacts to Collect](./phishing/artifacts-to-collect/README.md)
   - [Manual Collection](./phishing/manual-collection/README.md)
+  - [Automated Collection](./phishing/automated-collection/README.md)
 
 ---
 
