@@ -45,6 +45,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Automated Collection](./phishing/automated-collection/README.md)
   - [Analyzing Artifacts](./phishing/analyzing-artifacts/READNE.md)
   - [Malware Sandboxing](./phishing/malware-sandboxing/README.md)
+  - [Automated Artifact Analysis](./phishing/automated-artifact-analysis/README.md)
 
 ---
 
