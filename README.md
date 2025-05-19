@@ -43,6 +43,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Artifacts to Collect](./phishing/artifacts-to-collect/README.md)
   - [Manual Collection](./phishing/manual-collection/README.md)
   - [Automated Collection](./phishing/automated-collection/README.md)
+  - [Analyzing Artifacts](./phishing/analyzing-artifacts/READNE.md)
 
 ---
 
