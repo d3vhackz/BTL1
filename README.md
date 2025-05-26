@@ -48,6 +48,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Automated Artifact Analysis](./phishing/automated-artifact-analysis/README.md)
   - [Preventative Measures](./phishing/preventative-measures/README.md)
   - [Reactive Measures](./phishing/reactive-measures/README.md)
+  - [Report Writing](./phishing/report-writing/README.md)
 
 ---
 
