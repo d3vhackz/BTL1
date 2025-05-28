@@ -50,6 +50,11 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Reactive Measures](./phishing/reactive-measures/README.md)
   - [Report Writing](./phishing/report-writing/README.md)
 
+- Threat Intelligence
+  - [Intro to Threat Intelligence](./threat-intel/intro/README.md)
+  - 
+
+   
 ---
 
 > ✅ Tip: Keep each section in its own subfolder with a `README.md` for clean linking.
