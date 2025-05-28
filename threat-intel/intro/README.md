@@ -66,86 +66,35 @@ Tenable’s **VPR** (Vulnerability Priority Rating) combines CVEs with real-time
 
 ## Glossary
 
-### TIP — Threat Intelligence Platform  
-A system for storing IOCs and reports to feed into firewalls, IDS, SIEM, and EDR tools for enhanced security posture.
+## Glossary
 
-### TEC — Threat Exposure Check  
-Manual or automated checks for known malicious indicators across an environment.
+- **APT** – Advanced Persistent Threat: A sophisticated, often state-sponsored threat actor focused on long-term, covert cyber operations.
+- **COMINT** – Communications Intelligence: Intelligence gathered from intercepted communications between individuals or organizations.
+- **CTI** – Cyber Threat Intelligence: The discipline of collecting and analyzing cyber threat data to inform defense strategies.
+- **CVE** – Common Vulnerabilities and Exposures: A standardized identifier for publicly disclosed cybersecurity vulnerabilities.
+- **CVSS** – Common Vulnerability Scoring System: A framework for rating the severity of security vulnerabilities.
+- **DDoS** – Distributed Denial of Service: An attack that overwhelms systems with traffic to make services unavailable.
+- **EDR** – Endpoint Detection and Response: Tools that monitor endpoint activity for threats and enable automated or manual responses.
+- **ELINT** – Electronic Intelligence: Intelligence from non-communication electronic sources like radar or weapons systems.
+- **FIN** – Financially Motivated Threat Actor: Threat groups focused on cybercrime for profit, often tracked by vendors like FireEye.
+- **GEOSINT** – Geospatial Intelligence: Intelligence derived from satellite imagery, mapping natural disasters, military positions, or infrastructure.
+- **HUMINT** – Human Intelligence: Intelligence gathered directly from human sources via interviews, espionage, or observation.
+- **IOC** – Indicator of Compromise: Data points (like IPs, URLs, hashes) that signal potential malicious activity.
+- **ISAC** – Information Sharing and Analysis Center: An industry-specific group for collaborative intelligence sharing.
+- **MD5** – Message Digest 5: A hashing algorithm producing a 128-bit value, now considered cryptographically broken.
+- **MISP** – Malware Information Sharing Platform: An open-source platform for storing and sharing threat intelligence and IOCs.
+- **OSINT** – Open Source Intelligence: Publicly available data from sources like social media, WHOIS records, or forums.
+- **RDP** – Remote Desktop Protocol: A Microsoft protocol for remote system access, often targeted by attackers.
+- **SHA1** – Secure Hash Algorithm 1: A deprecated cryptographic hash function producing a 160-bit hash value.
+- **SHA256** – Secure Hash Algorithm 256: A secure cryptographic hash used for file validation and integrity checks.
+- **SIGINT** – Signals Intelligence: Broad category of intelligence collected from electronic signal interception.
+- **TEC** – Threat Exposure Check: A process of scanning environments for known IOCs or suspicious behavior.
+- **TIP** – Threat Intelligence Platform: A system used to store, enrich, and distribute threat intel to security tools.
+- **TTP** – Tactics, Techniques, and Procedures: Behavioral patterns used by threat actors, often categorized by MITRE ATT&CK.
+- **UAV** – Unmanned Aerial Vehicle: Drones or autonomous aircraft used in military, surveillance, or intelligence roles.
+- **UNC** – Unclassified Threat Actor: A temporary designation used during ongoing threat actor tracking and attribution.
+- **VPR** – Vulnerability Priority Rating: A dynamic vulnerability score by Tenable that factors in real-world exploitability.
 
-### EDR — Endpoint Detection and Response  
-Endpoint agents that detect anomalies, send telemetry, and can take automated defensive actions.
-
-### IDS/IPS/IDPS — Intrusion Detection/Prevention System  
-Systems that detect (IDS) or prevent (IPS) malicious activity on a network.
-
-### CTI — Cyber Threat Intelligence  
-Intelligence activities focused on cyber threats, actors, and defense readiness.
-
-### IOC — Indicator of Compromise  
-Data from known malicious activities, e.g., file hashes, email addresses, or domains used in attacks.
-
-### TTP — Tactics, Techniques, and Procedures  
-Methods adversaries use, as categorized by MITRE ATT&CK.
-
-### MD5 — Message Digest 5  
-A 128-bit hash used for file validation, not secure for cryptographic purposes.
-
-### SHA1 — Secure Hash Algorithm 1  
-A deprecated 160-bit hash function formerly used in cryptography.
-
-### SHA256 — Secure Hash Algorithm 256  
-A secure hashing algorithm producing a 256-bit hash, useful for verifying file integrity.
-
-### APT — Advanced Persistent Threat  
-Nation-state level actors engaged in long-term, covert cyber operations.
-
-### OSINT — Open-Source Intelligence  
-Data collected from publicly available sources like websites, social media, and forums.
-
-### MISP — Malware Information Sharing Platform  
-An open-source tool to store and share threat intel across trusted organizations.
-
-### DDoS — Distributed Denial-of-Service  
-Attacks that overwhelm a service with traffic from many sources to render it unusable.
-
-### CVE — Common Vulnerabilities and Exposures  
-A unique identifier system for publicly known security vulnerabilities.
-
-### CVSS — Common Vulnerability Severity Scoring  
-Standard for rating the severity of software vulnerabilities.
-
-### RDP — Remote Desktop Protocol  
-A Windows service allowing remote GUI access to systems, often abused by attackers for lateral movement.
-
-### VPR — Vulnerability Priority Rating  
-Tenable's score combining vulnerability data with threat intel to prioritize patching efforts.
-
-### SIGINT — Signals Intelligence  
-Intercepted communication signals for gathering military or cyber intelligence.
-
-### COMINT — Communications Intelligence  
-A subset of SIGINT focused on messages between people (text, voice).
-
-### ELINT — Electronic Intelligence  
-Intelligence from non-communication sources like radar and guidance systems.
-
-### UAV — Unmanned Aerial Vehicle  
-Drones or aircraft operated remotely or autonomously for reconnaissance or other purposes.
-
-### HUMINT — Human Intelligence  
-Intelligence gathered through interpersonal contact or observation.
-
-### GEOINT / GEOSINT — Geospatial Intelligence  
-Intelligence derived from satellite imagery, used in defense and disaster response.
-
-### FIN — Financially Motivated Threat Actor  
-Threat groups driven by financial gain, often involved in cybercrime.
-
-### UNC — Unclassified Threat Actor  
-A designation used by FireEye/Mandiant for groups under analysis.
-
-### ISAC — Information Sharing and Analysis Center  
-Industry-specific collectives that share cyber threat intelligence for mutual defense.
 
 ---
 
