@@ -66,8 +66,6 @@ Tenable’s **VPR** (Vulnerability Priority Rating) combines CVEs with real-time
 
 ## Glossary
 
-## Glossary
-
 - **APT** – Advanced Persistent Threat: A sophisticated, often state-sponsored threat actor focused on long-term, covert cyber operations.
 - **COMINT** – Communications Intelligence: Intelligence gathered from intercepted communications between individuals or organizations.
 - **CTI** – Cyber Threat Intelligence: The discipline of collecting and analyzing cyber threat data to inform defense strategies.
