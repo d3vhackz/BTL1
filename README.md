@@ -52,7 +52,7 @@ If you are a representative of Security Blue Team and believe any content here v
 
 - Threat Intelligence
   - [Intro to Threat Intelligence](./threat-intel/intro/README.md)
-  - 
+  - [Threat Actors and APTs](./threat-intel/threat-actors/README.md)
 
    
 ---
