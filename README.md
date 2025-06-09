@@ -55,6 +55,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Threat Actors and APTs](./threat-intel/threat-actors/README.md)
   - [Operational Threat Intelligence](./threat-intel/operational-threat-intel/README.md)
   - [Tactical Threat Intelligence](./threat-intel/tactical-threat-intel/README.md)
+  - [Strategic Threat Intelligence](./threat-intel/strategic-threat-intel/README.md)
 
    
 ---
