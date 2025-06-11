@@ -9,7 +9,7 @@ If you are a representative of Security Blue Team and believe any content here v
 ## 📘 Table of Contents
 
 - Security Fundamentals  
-  - [Physical Security](./Security%20Fundamentals/physical-security/README.md)  
+  - [Physical Security](./Security%20Fundamentals/Physical%20Security/README.md)  
   - [Endpoint Security](./Security%20Fundamentals/endpoint-security/README.md)  
   - [Security Controls](./Security%20Fundamentals/security-controls/README.md)  
 
