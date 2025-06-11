@@ -1,4 +1,4 @@
-# TCP, UDP, and ICMP
+# TCP vs UDP vs ICMP
 
 Understanding core transport and network protocols is critical for analyzing traffic, building detections, and troubleshooting issues.
 
