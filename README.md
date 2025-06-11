@@ -10,18 +10,18 @@ If you are a representative of Security Blue Team and believe any content here v
 
 - Security Fundamentals  
   - [Physical Security](./Security%20Fundamentals/physical-security/README.md)  
-  - [Endpoint Security](./security%20fundamentals/endpoint-security/README.md)  
-  - [Security Controls](./security%20fundamentals/security-controls/README.md)  
+  - [Endpoint Security](./Security%20Fundamentals/endpoint-security/README.md)  
+  - [Security Controls](./Security%20Fundamentals/security-controls/README.md)  
 
 - Email Security  
   - [Spam Filtering](./Email%20Security/spam-filtering/README.md)  
-  - [Data Loss Prevention (DLP)](./email%20security/dlp/README.md)  
-  - [Email Scanning](./email%20security/email-scanning/README.md)  
+  - [Data Loss Prevention (DLP)](./Email%20Security/dlp/README.md)  
+  - [Email Scanning](./Email%20Security/email-scanning/README.md)  
 
 - Network Security  
-  - [NIDS vs NIPS](./network-security/nids-nips/README.md)  
-  - [Log Monitoring](./network-security/log-monitoring/README.md)  
-  - [NAC](./network-security/nac/README.md)  
+  - [NIDS vs NIPS](./Network%20Security/nids-nips/README.md)  
+  - [Log Monitoring](./Network%20Security/log-monitoring/README.md)  
+  - [NAC](./Network%20Security/nac/README.md)  
 
 - AAA Controls  
   - [Authentication, Authorization, Accountability](./aaa/README.md)  
