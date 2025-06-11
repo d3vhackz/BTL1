@@ -14,7 +14,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Security Controls](./security%20fundamentals/security-controls/README.md)  
 
 - Email Security  
-  - [Spam Filtering](./email%20security/spam-filtering/README.md)  
+  - [Spam Filtering](./Email%20Security/spam-filtering/README.md)  
   - [Data Loss Prevention (DLP)](./email%20security/dlp/README.md)  
   - [Email Scanning](./email%20security/email-scanning/README.md)  
 
