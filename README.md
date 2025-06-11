@@ -24,38 +24,38 @@ If you are a representative of Security Blue Team and believe any content here v
   - [NAC](./Network%20Security/nac/README.md)  
 
 - AAA Controls  
-  - [Authentication, Authorization, Accountability](./aaa/README.md)  
+  - [Authentication, Authorization, Accountability](./AAA/README.md)  
 
 - Networking 101  
-  - [TCP/UDP/ICMP](./networking/tcp-udp-icmp/README.md)  
-  - [OSI Model](./networking/osi-model/README.md)  
-  - [Network Devices](./networking/network-devices/README.md)  
-  - [Network Tools](./networking/network-tools/README.md)  
-  - [Ports and Protocols](./networking/ports-protocols/README.md)  
+  - [TCP/UDP/ICMP](./Networking/tcp-udp-icmp/README.md)  
+  - [OSI Model](./Networking/osi-model/README.md)  
+  - [Network Devices](./Networking/network-devices/README.md)  
+  - [Network Tools](./Networking/network-tools/README.md)  
+  - [Ports and Protocols](./Networking/ports-protocols/README.md)  
 
 - Management Principles  
-  - [Risk](./management/risk/README.md)  
-  - [Policies and Procedures](./management/policies/README.md)  
-  - [Compliance and Frameworks](./management/compliance/README.md)  
+  - [Risk](./Management/risk/README.md)  
+  - [Policies and Procedures](./Management/policies/README.md)  
+  - [Compliance and Frameworks](./Management/compliance/README.md)  
 
 - Phishing Analysis  
-  - [Email Protocols & Anatomy](./phishing/email-protocols-anatomy/README.md)
-  - [Artifacts to Collect](./phishing/artifacts-to-collect/README.md)
-  - [Manual Collection](./phishing/manual-collection/README.md)
-  - [Automated Collection](./phishing/automated-collection/README.md)
-  - [Analyzing Artifacts](./phishing/analyzing-artifacts/READNE.md)
-  - [Malware Sandboxing](./phishing/malware-sandboxing/README.md)
-  - [Automated Artifact Analysis](./phishing/automated-artifact-analysis/README.md)
-  - [Preventative Measures](./phishing/preventative-measures/README.md)
-  - [Reactive Measures](./phishing/reactive-measures/README.md)
-  - [Report Writing](./phishing/report-writing/README.md)
+  - [Email Protocols & Anatomy](./Phishing/email-protocols-anatomy/README.md)
+  - [Artifacts to Collect](./Phishing/artifacts-to-collect/README.md)
+  - [Manual Collection](./Phishing/manual-collection/README.md)
+  - [Automated Collection](./Phishing/automated-collection/README.md)
+  - [Analyzing Artifacts](./Phishing/analyzing-artifacts/READNE.md)
+  - [Malware Sandboxing](./Phishing/malware-sandboxing/README.md)
+  - [Automated Artifact Analysis](./Phishing/automated-artifact-analysis/README.md)
+  - [Preventative Measures](./Phishing/preventative-measures/README.md)
+  - [Reactive Measures](./Phishing/reactive-measures/README.md)
+  - [Report Writing](./Phishing/report-writing/README.md)
 
 - Threat Intelligence
-  - [Intro to Threat Intelligence](./threat-intel/intro/README.md)
-  - [Threat Actors and APTs](./threat-intel/threat-actors/README.md)
-  - [Operational Threat Intelligence](./threat-intel/operational-threat-intel/README.md)
-  - [Tactical Threat Intelligence](./threat-intel/tactical-threat-intel/README.md)
-  - [Strategic Threat Intelligence](./threat-intel/strategic-threat-intel/README.md)
+  - [Intro to Threat Intelligence](./Threat%20Intel/intro/README.md)
+  - [Threat Actors and APTs](./Threat%20Intel/threat-actors/README.md)
+  - [Operational Threat Intelligence](./Threat%20Intel/operational-threat-intel/README.md)
+  - [Tactical Threat Intelligence](./Threat%20Intel/tactical-threat-intel/README.md)
+  - [Strategic Threat Intelligence](./Threat%20Intel/strategic-threat-intel/README.md)
 
    
 ---
