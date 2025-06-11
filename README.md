@@ -31,7 +31,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [OSI Model](./Networking%20101/OSI%20Model/README.md)  
   - [Network Devices](./Networking%20101/Network%20Devices/README.md)  
   - [Network Tools](./Networking%20101/Network%20Tools/README.md)  
-  - [Ports and Protocols](./Networking%20101/Ports%20&%20Protocols/README.md)  
+  - [Ports and Protocols](./Networking%20101/Ports%20and%20Protocols/README.md)  
 
 - Management Principles  
   - [Risk](./Management%20Principles/Risk/README.md)  
