@@ -27,7 +27,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Authentication, Authorization, Accountability](./Authentication%2C%20Authorization%2C%20Accountability/README.md)  
 
 - Networking 101  
-  - [TCP vs UDP vs ICMP](./Networking%20101/TCP%20vsUDP%20vsICMP/README.md)  
+  - [TCP vs UDP vs ICMP](./Networking%20101/TCP%20vsUDP%20vs%20ICMP/README.md)  
   - [OSI Model](./Networking%20101/OSI%20Model/README.md)  
   - [Network Devices](./Networking%20101/Network%20Devices/README.md)  
   - [Network Tools](./Networking%20101/Network%20Tools/README.md)  
