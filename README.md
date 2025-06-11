@@ -21,7 +21,7 @@ If you are a representative of Security Blue Team and believe any content here v
 - Network Security  
   - [NIDS vs NIPS](./Network%20Security/NIDS%20vs%20NIPS/README.md)  
   - [Log Monitoring](./Network%20Security/Log%20Monitoring/README.md)  
-  - [NAC](./Network%20Security/NAC/README.md)  
+  - [Network Access Control (NAC)](./Network%20Security/Network%20Access%20Control%20(NAC)/README.md)  
 
 - AAA Controls  
   - [Authentication, Authorization, Accountability](./AAA%20Controls/Authentication%2C%20Authorization%2C%20Accountability/README.md)  
