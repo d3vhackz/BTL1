@@ -39,7 +39,7 @@ If you are a representative of Security Blue Team and believe any content here v
   - [Compliance and Frameworks](./Management%20Principles/Compliance%20and%20Frameworks/README.md)  
 
 - Phishing Analysis  
-  - [Email Protocols & Anatomy](./Phishing%20Analysis/Email%20Protocols%20%26%20Anatomy/README.md)  
+  - [Email Protocols & Anatomy](./Phishing%20Analysis/Email%20Protocols%20&%20Anatomy/README.md)  
   - [Artifacts to Collect](./Phishing%20Analysis/Artifacts%20to%20Collect/README.md)  
   - [Manual Collection](./Phishing%20Analysis/Manual%20Collection/README.md)  
   - [Automated Collection](./Phishing%20Analysis/Automated%20Collection/README.md)  
