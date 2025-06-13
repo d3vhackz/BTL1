@@ -1,2 +1,0 @@
-# Intro to Digital Forensics
-
