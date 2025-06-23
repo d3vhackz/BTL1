@@ -1,20 +1,30 @@
-# 4.5: Evidence Handling and Integrity
+# 4.5: Evidence Handling, Integrity, and Volatility
 
-Proper evidence handling is the cornerstone of a forensically sound investigation. This section covers the core principles that govern the treatment of digital evidence to ensure its integrity and admissibility.
-
----
-
-## Digital Evidence
-
-**Digital evidence** is any probative information stored or transmitted in digital form. This includes emails, logs, files, browser history, and photos. It is often more voluminous, easily duplicated, and more fragile than physical evidence.
-
-> **Key Principle**: Digital evidence is easily modified. A single piece of evidence should always be verified with corroborating data before being trusted.
+A forensically sound investigation hinges on the meticulous handling of digital evidence. This section covers the foundational principles, from defining what evidence is and how it's handled according to ACPO guidelines, to ensuring its integrity with hashing and collecting it in the correct order of volatility.
 
 ---
 
-## ACPO Principles for Digital Evidence
+## What is Digital Evidence?
 
-The Association of Chief Police Officers (ACPO) established four core principles for handling computer-based electronic evidence. These are the gold standard in forensic investigations.
+**Digital evidence** is any probative information stored or transmitted in digital form that can be used in a legal proceeding. Like physical trace evidence left at a crime scene, digital interactions also leave traces, such as logs, cookies, and metadata.
+
+### Common Forms of Digital Evidence
+-   **Emails**: Can contain written communication, attachments, and routing metadata.
+-   **Digital Photographs**: The image itself, plus EXIF metadata which can include GPS location, device model, and timestamps.
+-   **System Logs**: Records of events like user logins, application errors, and network connections (e.g., Windows Event Logs).
+-   **User Files**: Documents, notes, source code, images, and installed software that reveal user activity and intent.
+-   **Messages**: Communications from platforms like iMessage, WhatsApp, or Facebook Messenger.
+-   **Browser History**: A timeline of accessed websites and online resources.
+-   **Backups**: Archives that may contain copies of files that have since been deleted from the live system.
+
+### The Fragility of Digital Evidence
+Digital evidence is easily modified, often without intent. It is crucial to verify any single piece of evidence with corroborating data before it can be fully trusted.
+
+---
+
+## The ACPO Principles for Evidence Handling
+
+The Association of Chief Police Officers (ACPO) established four core principles that are the gold standard for handling computer-based electronic evidence.
 
 > **Principle 1:** No action taken by law enforcement or their agents should change data held on a computer or storage media which may subsequently be relied upon in court.
 
@@ -26,16 +36,59 @@ The Association of Chief Police Officers (ACPO) established four core principles
 
 ---
 
-## Chain of Custody
+## Maintaining the Chain of Custody
 
-The **Chain of Custody** is a crucial process that documents the chronological history of evidence. It ensures the integrity of evidence by tracking who handled it, when, and for what purpose, from the moment of collection to its presentation in court.
+The **Chain of Custody** is a crucial process that documents the chronological history of evidence. It ensures integrity by tracking who handled the evidence, when, and for what purpose, from collection to court presentation. A broken chain can render evidence inadmissible.
 
-A broken chain of custody can lead to evidence being dismissed, as it introduces doubt about whether the evidence was tampered with.
+### Key Components of the Chain of Custody
+1.  **Integrity Hashing**: Before analysis, calculate a hash of the original evidence. After creating a forensic copy, hash the copy and verify that the values match exactly.
+2.  **Using Write-Blockers**: A **write-blocker** is a hardware or software tool that ensures a storage device can only be read from, preventing any accidental modification by the operating system during examination. Hardware write-blockers are the preferred standard as they operate independently of the OS.
+3.  **Working from a Forensic Copy**: Analysis should always be performed on a verified bit-for-bit copy (a forensic image) of the original evidence, which should be kept securely stored and untouched.
+4.  **Documentation**: Every action must be meticulously documented on a Chain of Custody form. As the saying goes: "If you didn’t write it down, it didn’t happen."
 
-### Maintaining the Chain of Custody
-1.  **Integrity Hashing**: Before handling any evidence, calculate its hash value (e.g., SHA256). After creating a forensic copy, hash the copy. The two hashes must match exactly to prove the copy is identical. Use at least two different hash algorithms (e.g., MD5 and SHA256) to guard against hash collisions.
-2.  **Forensic Copies**: Always work on a verified forensic copy (a bit-by-bit image) of the original evidence. The original should be securely stored and left untouched.
-3.  **Secure Storage**: Physical evidence should be stored in anti-static, tamper-evident bags. Faraday cages may be used to block wireless signals. All evidence must be kept in a secure, access-controlled location.
-4.  **Documentation**: Every interaction with the evidence must be logged on a Chain of Custody form. This includes who accessed it, when, where, and why.
+---
+
+## Hashing for Evidence Integrity
+
+A **hash** is a unique digital fingerprint of a file or data set, generated by a one-way mathematical function. Any change to the input data, no matter how small, results in a completely different hash value.
+
+-   **Common Algorithms**: MD5, SHA1, and **SHA256 (the modern standard)**.
+-   **Purpose**: Hashing is the primary method for verifying that evidence has not been altered.
+-   **Mitigating Collisions**: While rare, a hash collision (where two different inputs produce the same hash) is possible with older algorithms like MD5. To guard against this, it is best practice to use at least two different hashing algorithms (e.g., MD5 and SHA256) for verification.
+
+### Gathering Hashes in Practice
+-   **Windows (PowerShell)**:
+    ```powershell
+    # Default is SHA256
+    Get-FileHash C:\path\to\file.exe
+
+    # Specify other algorithms
+    Get-FileHash C:\path\to\file.exe -Algorithm MD5
+    Get-FileHash C:\path\to\file.exe -Algorithm SHA1
+    ```
+-   **Linux (Terminal)**:
+    ```bash
+    # For files
+    md5sum <file>
+    sha1sum <file>
+    sha256sum <file>
+
+    # For text strings
+    echo -n "some_text" | md5sum
+    ```
+
+---
+
+## The Order of Volatility
+
+Volatile evidence is data that can be lost when a system is powered down. To prevent data loss, evidence must be collected in order from **most volatile to least volatile**, as outlined in **IETF RFC 3227**.
+
+1.  **Registers & Cache**: CPU data is extremely volatile and constantly changing. This is the first data to be lost.
+2.  **Memory (RAM)**: Contains running processes, active network connections, encryption keys, and other live system data. This is lost when power is cut.
+3.  **Network State**: Includes the ARP cache and routing tables.
+4.  **Running Processes**: Information about what programs are currently executing.
+5.  **Disk (HDD and SSD)**: Data stored on drives is considered non-volatile but can be altered by a running OS or destroyed by SSD maintenance functions (TRIM/Garbage Collection).
+6.  **Remote Logging and Monitoring Data**: Data stored on a separate logging server.
+7.  **Physical Configuration & Archival Media**: Items that change slowly or are stored offline, such as network diagrams and backups on USB drives or tapes. This is the least volatile evidence.
 
 [⬆️ Back to Digital Forensics](./README.md)
