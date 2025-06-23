@@ -1,6 +1,6 @@
 # Module 4: Digital Forensics
 
-This module covers the core principles, processes, and tools used in digital forensic investigations, from evidence handling and data representation to file system analysis and file carving.
+This module covers the core principles, processes, and tools used in digital forensic investigations, from evidence handling and data representation to live evidence acquisition and destruction.
 
 ## Table of Contents
 
@@ -11,5 +11,7 @@ This module covers the core principles, processes, and tools used in digital for
 -   [**05: Evidence Handling and Integrity**](./05-evidence-handling-and-integrity.md)
 -   [**06: Memory and System Files**](./06-memory-and-system-files.md)
 -   [**07: Metadata and File Carving**](./07-metadata-and-file-carving.md)
+-   [**08: Evidence Collection and Acquisition**](./08-evidence-collection-and-acquisition.md)
+-   [**09: Evidence Destruction**](./09-evidence-destruction.md)
 
 *(This module is currently in progress.)*
