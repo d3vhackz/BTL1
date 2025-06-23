@@ -1,49 +1,41 @@
 # 4.5: Evidence Handling and Integrity
 
-Proper evidence handling is the cornerstone of a forensically sound investigation. Mistakes can taint evidence, rendering it inadmissible in legal proceedings and unreliable for internal analysis.
+Proper evidence handling is the cornerstone of a forensically sound investigation. This section covers the core principles that govern the treatment of digital evidence to ensure its integrity and admissibility.
 
 ---
 
 ## Digital Evidence
 
-**Digital evidence** is any probative information stored or transmitted in digital form. This can include emails, logs, files, browser history, photos, and messages.
+**Digital evidence** is any probative information stored or transmitted in digital form. This includes emails, logs, files, browser history, and photos. It is often more voluminous, easily duplicated, and more fragile than physical evidence.
 
-> **Key Principle**: Digital evidence is easily modified. Any single piece of evidence should be treated with caution and verified with corroborating data before being trusted.
-
----
-
-## Core Principles of Evidence Handling
-
-1.  **Do No Harm**: Actions taken should not alter the original evidence. Whenever possible, analysis should be performed on a forensic copy, not the original media.
-2.  **Use Write-Blockers**: A **write-blocker** is a device or software that prevents an operating system from making any changes to a storage device.
-    -   **Hardware Write-Blockers**: Intercept signals at the hardware level, work with any OS, and are the preferred standard.
-    -   **Software Write-Blockers**: Work at the OS level and are specific to that OS.
-3.  **Document Everything**: Every action taken during an investigation must be meticulously documented. "If you didn't write it down, it didn't happen." This documentation forms the basis of the **Chain of Custody**, a log that tracks the control, transfer, and analysis of evidence.
+> **Key Principle**: Digital evidence is easily modified. A single piece of evidence should always be verified with corroborating data before being trusted.
 
 ---
 
-## Hashing and Evidence Integrity
+## ACPO Principles for Digital Evidence
 
-A **hash** is a unique digital fingerprint of a file or piece of data. The most common algorithms are MD5, SHA1, and **SHA256 (the modern standard)**.
+The Association of Chief Police Officers (ACPO) established four core principles for handling computer-based electronic evidence. These are the gold standard in forensic investigations.
 
-### How Hashing Ensures Integrity
-1.  **Acquisition**: When a storage device is collected, a hash value of the entire drive is calculated.
-2.  **Imaging**: A bit-for-bit forensic image (an exact copy) of the device is created.
-3.  **Verification**: A hash of the new forensic image is calculated.
-4.  **Comparison**: The two hash values must match exactly. If they do, it proves the copy is identical to the original and has not been tampered with. This verification process is fundamental to all forensic work.
+> **Principle 1:** No action taken by law enforcement or their agents should change data held on a computer or storage media which may subsequently be relied upon in court.
+
+> **Principle 2:** In circumstances where a person finds it necessary to access original data held on a computer or on storage media, that person must be competent to do so and be able to give evidence explaining the relevance and the implications of their actions.
+
+> **Principle 3:** An audit trail or other record of all processes applied to computer-based electronic evidence should be created and preserved. An independent third party should be able to examine those processes and achieve the same result.
+
+> **Principle 4:** The person in charge of the investigation (the case officer) has overall responsibility for ensuring that the law and these principles are adhered to.
 
 ---
 
-## The Order of Volatility
+## Chain of Custody
 
-Volatile evidence is data that can be lost when a system is powered down. Evidence should be collected in order from most volatile to least volatile to minimize data loss, as outlined in **IETF RFC 3227**.
+The **Chain of Custody** is a crucial process that documents the chronological history of evidence. It ensures the integrity of evidence by tracking who handled it, when, and for what purpose, from the moment of collection to its presentation in court.
 
-1.  **Registers & Cache**: CPU data, extremely volatile and constantly changing.
-2.  **Memory (RAM)**: Running processes, network connections, encryption keys. Lost on power down.
-3.  **Network State**: Active connections, ARP cache.
-4.  **Running Processes**: Information about what programs are currently executing.
-5.  **Disk (HDD/SSD)**: Data on storage drives. Considered non-volatile but can be altered by running processes.
-6.  **Remote Logging/Monitoring Data**: Logs stored on a separate system.
-7.  **Physical Configuration & Archived Media**: Network topology diagrams and backups. Least volatile.
+A broken chain of custody can lead to evidence being dismissed, as it introduces doubt about whether the evidence was tampered with.
+
+### Maintaining the Chain of Custody
+1.  **Integrity Hashing**: Before handling any evidence, calculate its hash value (e.g., SHA256). After creating a forensic copy, hash the copy. The two hashes must match exactly to prove the copy is identical. Use at least two different hash algorithms (e.g., MD5 and SHA256) to guard against hash collisions.
+2.  **Forensic Copies**: Always work on a verified forensic copy (a bit-by-bit image) of the original evidence. The original should be securely stored and left untouched.
+3.  **Secure Storage**: Physical evidence should be stored in anti-static, tamper-evident bags. Faraday cages may be used to block wireless signals. All evidence must be kept in a secure, access-controlled location.
+4.  **Documentation**: Every interaction with the evidence must be logged on a Chain of Custody form. This includes who accessed it, when, where, and why.
 
 [⬆️ Back to Digital Forensics](./README.md)
