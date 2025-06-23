@@ -13,5 +13,6 @@ This module covers the core principles, processes, and tools used in digital for
 -   [**07: Metadata and File Carving**](./07-metadata-and-file-carving.md)
 -   [**08: Evidence Collection and Acquisition**](./08-evidence-collection-and-acquisition.md)
 -   [**09: Evidence Destruction**](./09-evidence-destruction.md)
+-   [**10: Windows Artifacts**](./10-windows-artifacts.md)
 
 *(This module is currently in progress.)*
