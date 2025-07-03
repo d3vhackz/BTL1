@@ -88,7 +88,7 @@ SIEM = SIM (Historical Analysis) + SEM (Real-time Detection)
 │  ├── Statistical Analysis                               │
 │  └── Machine Learning                                   │
 ├─────────────────────────────────────────────────────────┤
-│  Data Processing & Normalization                       │
+│  Data Processing & Normalization                        │
 │  ├── Log Parsing                                        │
 │  ├── Data Enrichment                                    │
 │  └── Field Mapping                                      │
