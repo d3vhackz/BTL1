@@ -71,15 +71,15 @@ Effective SIEM implementations require careful consideration of **what to log** 
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │   Network   │    │   Security  │    │    Server   │
-│   Devices   │───▶│   Gateway   │───▶│  Systems    │
+│   Devices   │───▶│   Gateway   │──▶│   Systems   │
 │             │    │             │    │             │
 └─────────────┘    └─────────────┘    └─────────────┘
        │                   │                   │
        ▼                   ▼                   ▼
 ┌──────────────────────────────────────────────────────┐
-│              Syslog Server/SIEM                      │
+│                  Syslog Server/SIEM                  │
 │  ┌─────────────────────────────────────────────────┐ │
-│  │          Centralized Log Analysis               │ │
+│  │            Centralized Log Analysis             │ │
 │  └─────────────────────────────────────────────────┘ │
 └──────────────────────────────────────────────────────┘
 ```
