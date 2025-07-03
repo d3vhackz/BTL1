@@ -203,19 +203,34 @@ graph LR
 
 ## 📚 Policy Hierarchy
 
-```mermaid
-pyramid
-    title Security Documentation Hierarchy
-    "Guidelines" : 25
-    "Procedures" : 35
-    "Standards" : 40
-    "Policies" : 50
+```
+                    ┌─────────────────┐
+                    │    POLICIES     │ ← High-level intent (What we do)
+                    │   (Strategic)   │
+                    └─────────────────┘
+                           │
+                    ┌─────────────────┐
+                    │   STANDARDS     │ ← Mandatory rules (How consistently)
+                    │  (Tactical)     │
+                    └─────────────────┘
+                           │
+                    ┌─────────────────┐
+                    │   PROCEDURES    │ ← Step-by-step tasks (How specifically)
+                    │ (Operational)   │
+                    └─────────────────┘
+                           │
+                    ┌─────────────────┐
+                    │   GUIDELINES    │ ← Recommended practices (What we suggest)
+                    │ (Advisory)      │
+                    └─────────────────┘
 ```
 
-- **Policies**: High-level statements of intent (*What* we do)
-- **Standards**: Mandatory rules supporting policies (*How* we do it consistently)
-- **Procedures**: Step-by-step task instructions (*How* to perform specific tasks)
-- **Guidelines**: Recommended best practices (*What* we suggest)
+| Level | Type | Authority | Purpose | Example |
+|-------|------|-----------|---------|---------|
+| **Policies** | Strategic | Mandatory | High-level direction | "All data must be protected" |
+| **Standards** | Tactical | Mandatory | Consistent implementation | "Use AES-256 encryption" |
+| **Procedures** | Operational | Mandatory | Specific task steps | "1. Install software 2. Configure..." |
+| **Guidelines** | Advisory | Recommended | Best practice suggestions | "Consider using 2FA" |
 
 ---
 
