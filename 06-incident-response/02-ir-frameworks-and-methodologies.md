@@ -1,224 +1,235 @@
-# 6.2: NIST Incident Response Lifecycle
+# 6.2: IR Frameworks and Methodologies
 
-The NIST SP 800-61r2 framework provides the industry-standard approach to incident response. This four-phase lifecycle ensures systematic, repeatable, and effective incident handling.
+Incident response frameworks provide structured methodologies for handling security incidents consistently and effectively. These frameworks establish common terminology, processes, and best practices across the cybersecurity industry.
 
 ---
 
-## The Four-Phase Framework
+## NIST SP 800-61 Framework
+
+The **NIST Special Publication 800-61** is the gold standard for incident response, providing a comprehensive framework adopted by organizations worldwide.
+
+### The Four-Phase NIST Model
 
 ```mermaid
 graph LR
-    A[Preparation] --> B[Detection & Analysis]
-    B --> C[Containment, Eradication & Recovery]
-    C --> D[Lessons Learned]
+    A[1. Preparation] --> B[2. Detection & Analysis]
+    B --> C[3. Containment, Eradication & Recovery]
+    C --> D[4. Post-Incident Activity]
     D --> A
-    
-    style A fill:#e1f5fe
-    style B fill:#fff3e0
-    style C fill:#fce4ec
-    style D fill:#f3e5f5
 ```
 
-> **Note**: This is a **continuous cycle** - each phase feeds into the next, creating an ongoing improvement process.
+#### Phase 1: Preparation
+**Objective**: Establish capability to respond effectively to incidents.
+
+**Key Activities**:
+- Develop IR policy and procedures
+- Create and train incident response team
+- Implement security controls and monitoring
+- Establish communication procedures
+- Prepare incident handling resources
+
+**Deliverables**:
+- IR plan and playbooks
+- Team contact lists
+- Tool inventories
+- Communication templates
+
+#### Phase 2: Detection and Analysis
+**Objective**: Identify and analyze potential security incidents.
+
+**Key Activities**:
+- Monitor security events across the environment
+- Analyze alerts and indicators to determine if an incident occurred
+- Collect and preserve evidence
+- Notify appropriate stakeholders
+- Prioritize incidents based on business impact
+
+**Common Detection Methods**:
+
+| Method | Description | Examples |
+|--------|-------------|----------|
+| **Automated Monitoring** | SIEM, IDS/IPS, EDR alerts | Malware detections, anomalous network traffic |
+| **User Reports** | Internal users reporting suspicious activity | Phishing emails, slow system performance |
+| **External Notifications** | Third parties reporting issues | Law enforcement, security vendors, customers |
+| **Proactive Discovery** | Threat hunting and audits | Vulnerability assessments, penetration tests |
+
+#### Phase 3: Containment, Eradication, and Recovery
+**Objective**: Stop the incident from spreading, eliminate the threat, and restore normal operations.
+
+**Containment Strategies**:
+
+| Strategy | When to Use | Pros | Cons |
+|----------|-------------|------|------|
+| **Short-term** | Immediate threat mitigation | Quick implementation | May not eliminate root cause |
+| **Long-term** | Permanent solution development | Comprehensive fix | Time-intensive |
+| **Acceptable Loss** | Cost of containment exceeds impact | Resource conservation | Some systems remain compromised |
+
+**Recovery Process**:
+1. **System Hardening**: Apply patches, update configurations
+2. **Restoration**: Rebuild systems from clean backups
+3. **Monitoring**: Enhanced surveillance for recurring activity
+4. **Validation**: Confirm systems are functioning normally
+
+#### Phase 4: Post-Incident Activity
+**Objective**: Learn from the incident and improve future response capabilities.
+
+**Key Activities**:
+- Conduct lessons learned meeting
+- Document incident details and response actions
+- Update IR plans and procedures
+- Implement additional security controls
+- Share information with relevant communities
 
 ---
 
-## Phase 1: Preparation 🛡️
+## SANS Incident Response Process
 
-**The most critical phase** - sets the foundation for effective incident response.
+The **SANS Institute** provides a complementary six-step methodology that expands on the NIST framework with additional granularity.
 
-### Key Activities
+### The SANS Six-Step Process
 
-#### 🎯 **Incident Readiness**
-- **Contact information** for all stakeholders maintained and current
-- **War room establishment** for central communication and coordination  
-- **Comprehensive documentation** of procedures and escalation paths
-- **System baselines** documented for "normal" operational states
-- **Equipment procurement** including digital forensic toolkits
+```
+1. Preparation
+2. Identification  
+3. Containment
+4. Eradication
+5. Recovery
+6. Lessons Learned
+```
 
-#### 🛡️ **Proactive Prevention**
-- **Current risk assessments** identifying organizational vulnerabilities
-- **Client and server security** controls implementation
-- **User awareness training** programs with regular updates
-- **Security control deployment** across all critical assets
+### Detailed SANS Steps
 
-### Preparation Success Metrics
-- Time to activate IR team (target: < 30 minutes)
-- Stakeholder notification speed (target: < 1 hour)
-- Equipment availability (target: 100% ready state)
-- Team training currency (target: quarterly exercises)
-
----
-
-## Phase 2: Detection & Analysis 🔍
-
-**Two distinct sub-phases** that bridge incident identification with response actions.
-
-### Detection Sub-Phase
-
-#### Automated Detection Systems
-| System Type | Primary Function | Alert Generation |
-|------------|------------------|------------------|
-| **IDPS** | Network/host intrusion monitoring | Real-time threat alerts |
-| **SIEM** | Log correlation and analysis | Pattern-based alerting |
-| **Anti-malware** | Endpoint threat detection | Signature/behavior alerts |
-| **EDR** | Advanced endpoint monitoring | Behavioral anomaly alerts |
-
-#### Manual Detection Sources
-- **User reports** of suspicious activity
-- **System administrator** observations
-- **External notifications** (law enforcement, partners)
-- **Threat intelligence** feeds and warnings
-
-### Analysis Sub-Phase
-
-#### Core Analysis Activities
-- **Initial attack vector** identification and documentation
-- **Lateral movement** tracking through network and systems
-- **Impact assessment** of affected systems and data
-- **Evidence collection** using forensically sound methods
-
-#### Critical Documentation Requirements
-- **Timeline reconstruction** of attacker activities
-- **Affected systems inventory** with detailed impact assessment
-- **IOC compilation** for threat hunting and sharing
-- **Attack methodology** mapping to MITRE ATT&CK framework
-
-### Communication Plan Activation
-
-#### Internal Notifications
-- **Management chain** (immediate supervisors to C-suite)
-- **IT leadership** for technical coordination
-- **Human Resources** for personnel-related incidents
-- **Legal team** for compliance and litigation concerns
-
-#### External Notifications (as required)
-- **Law enforcement** for criminal activity
-- **Regulatory bodies** for compliance violations
-- **Customers/partners** for service impacts
-- **Media/public** through designated spokespersons
+| Step | Focus | Key Questions |
+|------|-------|---------------|
+| **Preparation** | Readiness | Are we prepared to handle an incident? |
+| **Identification** | Detection | Has an incident occurred? What is the scope? |
+| **Containment** | Damage Control | How do we stop the spread? |
+| **Eradication** | Threat Removal | How do we eliminate the threat? |
+| **Recovery** | Restoration | How do we safely restore operations? |
+| **Lessons Learned** | Improvement | What can we learn and improve? |
 
 ---
 
-## Phase 3: Containment, Eradication & Recovery 🚨
+## Incident Classifications and Severity Levels
 
-**Three integrated sub-phases** focused on stopping damage and restoring operations.
+Proper classification ensures appropriate resource allocation and response urgency.
 
-### Containment Strategy Selection
+### Incident Categories by Impact
 
-#### NIST Containment Criteria
-| Criterion | Consideration | Impact on Strategy |
-|-----------|---------------|-------------------|
-| **Potential Damage** | Scope of possible harm | Aggressive vs conservative approach |
-| **Evidence Preservation** | Legal/forensic requirements | Live analysis vs system shutdown |
-| **Service Availability** | Business continuity needs | Immediate isolation vs gradual containment |
-| **Resource Requirements** | Time and personnel costs | Simple vs complex containment |
-| **Solution Effectiveness** | Likelihood of success | Primary vs backup strategies |
-| **Duration** | Temporary vs permanent fix | Short-term vs long-term planning |
+#### **Category 1: Data Breach**
+- **Definition**: Unauthorized access or disclosure of sensitive data
+- **Regulatory Implications**: GDPR, HIPAA, PCI-DSS notification requirements
+- **Response Priority**: High - Legal and regulatory deadlines
 
-#### Containment Approaches
+#### **Category 2: Service Disruption**
+- **Definition**: Significant impact on business operations or customer services
+- **Business Impact**: Revenue loss, customer dissatisfaction, SLA violations
+- **Response Priority**: High - Business continuity focused
 
-**Short-term Containment**:
-- Network isolation or segmentation
-- User account disabling
-- Service shutdown
-- Memory preservation for analysis
+#### **Category 3: Malware Infection**
+- **Definition**: Confirmed presence of malicious software
+- **Technical Impact**: System compromise, potential data theft, lateral movement
+- **Response Priority**: Medium to High - Based on malware type and spread
 
-**Long-term Containment**:
-- System reimaging and rebuilding
-- Network architecture changes
-- Policy and procedure updates
-- Enhanced monitoring deployment
+#### **Category 4: Unauthorized Access**
+- **Definition**: Improper use of systems or accounts
+- **Security Impact**: Privilege escalation, insider threats, external intrusion
+- **Response Priority**: Medium - Investigation and access control focused
 
-### Eradication & Recovery
+### Severity Level Matrix
 
-#### Eradication Activities
-- **Malware removal** using specialized tools
-- **Backdoor elimination** and access path closure  
-- **Credential reset** for all potentially compromised accounts
-- **Vulnerability patching** that enabled initial compromise
-- **Configuration hardening** to prevent reoccurrence
+| Severity | Business Impact | Technical Impact | Response Time | Escalation |
+|----------|----------------|------------------|---------------|------------|
+| **Critical** | Severe business disruption, significant data loss | Complete system compromise, active data exfiltration | < 1 hour | Executive leadership, external experts |
+| **High** | Major business impact, sensitive data exposure | Multiple systems affected, confirmed malicious activity | < 4 hours | Senior management, specialized teams |
+| **Medium** | Moderate business impact, limited data exposure | Single system affected, suspicious activity confirmed | < 24 hours | Department management, standard team |
+| **Low** | Minimal business impact, no data exposure | Isolated incident, policy violation | < 72 hours | Supervisor notification, standard process |
 
-#### Recovery Activities
-- **System restoration** from known-good backups
-- **Service restoration** with enhanced monitoring
-- **User access restoration** with additional verification
-- **Network security** enhancement and validation
+### Priority Calculation Formula
 
-### Evidence Documentation
-> **Critical Reminder**: All containment, eradication, and recovery activities must be thoroughly documented for potential legal proceedings and lessons learned analysis.
+```
+Priority = (Business Impact × Urgency × Scope) / Available Resources
 
----
-
-## Phase 4: Lessons Learned 📚
-
-**The most overlooked but valuable phase** - transforms incidents into organizational improvement.
-
-### Post-Incident Meeting Framework
-
-#### Key Questions to Address
-1. **Timeline Analysis**: Exactly what happened and when?
-2. **Performance Assessment**: How well did staff and management respond?
-3. **Information Gaps**: What information was needed sooner?
-4. **Process Hindrances**: What actions may have inhibited recovery?
-5. **Future Improvements**: What would be done differently next time?
-6. **Information Sharing**: How could external collaboration be improved?
-7. **Corrective Actions**: What specific improvements can be implemented?
-8. **Monitoring Enhancement**: What indicators should be watched for?
-9. **Resource Needs**: What additional tools or resources are required?
-
-### Implementation and Feedback Loop
-
-#### Documentation Requirements
-- **Detailed incident report** with timeline and impact analysis
-- **Response effectiveness** assessment with metrics
-- **Improvement recommendations** with priority rankings
-- **Resource requirements** for recommended changes
-
-#### Continuous Improvement
-- **Process updates** based on lessons learned
-- **Training modifications** to address identified gaps
-- **Technology enhancements** to improve detection/response
-- **Team structure adjustments** for better coordination
+Where:
+- Business Impact: 1-5 scale (revenue, reputation, compliance)
+- Urgency: 1-5 scale (time sensitivity, escalation potential)  
+- Scope: 1-5 scale (number of systems, users, data affected)
+- Available Resources: Current team capacity and expertise
+```
 
 ---
 
-## Lifecycle Integration Examples
+## Incident Declaration Criteria
 
-### Example 1: Ransomware Incident
-1. **Preparation**: IR plan includes ransomware-specific procedures
-2. **Detection**: EDR alerts on file encryption activities
-3. **Analysis**: Scope assessment reveals 50 affected workstations
-4. **Containment**: Network isolation prevents spread to servers
-5. **Eradication**: Malware removal and vulnerability patching
-6. **Recovery**: Restore from backups with enhanced monitoring
-7. **Lessons Learned**: Update backup procedures and user training
+Clear criteria help determine when an event becomes an incident requiring formal response.
 
-### Example 2: Phishing Campaign
-1. **Preparation**: Email security controls and user training in place
-2. **Detection**: User reports suspicious email to security team
-3. **Analysis**: Email analysis reveals credential harvesting attempt
-4. **Containment**: Block malicious domains and reset credentials
-5. **Eradication**: Remove emails from all mailboxes
-6. **Recovery**: Restore normal email operations with enhanced filtering
-7. **Lessons Learned**: Improve phishing training and email controls
+### Technical Indicators
+- **Confirmed malware detection** by multiple security tools
+- **Unauthorized network connections** to known malicious IPs
+- **Abnormal data transfer volumes** outside normal patterns
+- **Privilege escalation attempts** or successful unauthorized access
+- **System performance degradation** without clear cause
+
+### Business Indicators
+- **Customer complaints** about service availability or data concerns
+- **Regulatory notification triggers** met or exceeded
+- **Media attention** or public disclosure of potential issues
+- **Partner/vendor notifications** of compromise or suspicious activity
+- **Financial impact thresholds** exceeded
+
+### Legal and Compliance Indicators
+- **Personal data potentially exposed** to unauthorized parties
+- **Intellectual property theft** suspected or confirmed
+- **Compliance violations** detected or reported
+- **Criminal activity suspected** requiring law enforcement notification
 
 ---
 
-## Success Metrics
+## Documentation Standards
 
-### Response Time Metrics
-- **Detection to acknowledgment**: < 15 minutes
-- **Analysis completion**: < 2 hours for initial assessment
-- **Containment initiation**: < 1 hour from analysis completion
-- **Recovery completion**: Varies by incident scope
+Consistent documentation is critical for legal, regulatory, and improvement purposes.
 
-### Quality Metrics  
-- **False positive rate**: < 5% for automated alerts
-- **Escalation accuracy**: > 95% appropriate escalations
-- **Documentation completeness**: 100% of required elements
-- **Stakeholder satisfaction**: > 90% positive feedback
+### Incident Record Template
 
-The NIST lifecycle provides a proven framework, but success depends on thorough preparation and continuous improvement through lessons learned.
+```markdown
+## Incident ID: INC-YYYY-NNNN
+
+### Executive Summary
+- Incident Type: [Category]
+- Severity: [Critical/High/Medium/Low] 
+- Status: [Open/Contained/Resolved/Closed]
+- Business Impact: [Description]
+- Root Cause: [Summary]
+
+### Timeline
+- Detection: [Date/Time]
+- Declaration: [Date/Time] 
+- Containment: [Date/Time]
+- Resolution: [Date/Time]
+
+### Systems Affected
+- [System 1]: [Impact Description]
+- [System 2]: [Impact Description]
+
+### Response Actions
+1. [Action Taken] - [Date/Time] - [Person]
+2. [Action Taken] - [Date/Time] - [Person]
+
+### Evidence Collected
+- [Evidence Type] - [Location] - [Chain of Custody]
+
+### Lessons Learned
+- [Improvement Area]
+- [Recommendation]
+```
+
+### Metrics to Track
+
+| Metric | Purpose | Calculation |
+|--------|---------|-------------|
+| **Mean Time to Detection (MTTD)** | Measure detection effectiveness | Time from incident start to detection |
+| **Mean Time to Response (MTTR)** | Measure response speed | Time from detection to initial response |
+| **Mean Time to Containment (MTTC)** | Measure containment effectiveness | Time from response to containment |
+| **Mean Time to Recovery (MTR)** | Measure recovery efficiency | Time from containment to full recovery |
 
 [⬆️ Back to Incident Response](./README.md)
