@@ -13,6 +13,7 @@ By completing this module, you will understand:
 - Specialized incident types including APTs, insider threats, and data breaches
 - Modern IR technologies including SIEM, SOAR, and automation platforms
 - Legal, regulatory, and communication requirements for effective response
+- MITRE ATT&CK framework integration for enhanced incident analysis
 
 ---
 
@@ -72,6 +73,11 @@ By completing this module, you will understand:
   - Threat intelligence integration
   - SOAR and response automation
 
+- [**11: MITRE ATT&CK Framework Integration**](./11-mitre-attack-framework-integration.md)
+  - ATT&CK-driven threat hunting and detection
+  - Incident analysis and attack reconstruction
+  - Adversary emulation and program maturity
+
 ---
 
 ## 🔧 Essential Tools and Technologies
@@ -84,10 +90,11 @@ By completing this module, you will understand:
 | **Automation** | SOAR platforms, custom scripts | Response orchestration | Workflow automation, multi-tool integration |
 | **Documentation** | Case management, ticketing systems | Incident tracking | Chain of custody, audit trails |
 | **Threat Intel** | MISP, TIPs, IOC platforms | Context enhancement | Attribution, IOC correlation, campaign tracking |
+| **ATT&CK Tools** | Navigator, CALDERA, DeTT&CK | Framework integration | Technique mapping, coverage analysis, emulation |
 
 ---
 
-## 📊 Incident Response Workflow
+## 📊 Complete Incident Response Workflow
 
 ```mermaid
 graph TD
@@ -98,49 +105,53 @@ graph TD
     
     D --> E[Initial Response Team]
     E --> F[Triage and Assessment]
-    F --> G[Severity Classification]
+    F --> G[ATT&CK Technique Mapping]
+    G --> H[Severity Classification]
     
-    G --> H[Containment Planning]
-    H --> I[Evidence Collection]
-    I --> J[Threat Analysis]
+    H --> I[Containment Planning]
+    I --> J[Evidence Collection]
+    J --> K[Threat Analysis & ATT&CK Attribution]
     
-    J --> K[Containment Implementation]
-    K --> L[Eradication Planning]
-    L --> M[System Recovery]
+    K --> L[Containment Implementation]
+    L --> M[Eradication Planning]
+    M --> N[System Recovery]
     
-    M --> N[Validation Testing]
-    N --> O[Enhanced Monitoring]
-    O --> P[Lessons Learned]
+    N --> O[Validation Testing]
+    O --> P[Enhanced Monitoring]
+    P --> Q[Lessons Learned]
     
-    P --> Q[Process Improvement]
-    Q --> R[Documentation Complete]
+    Q --> R[ATT&CK Coverage Assessment]
+    R --> S[Process Improvement]
+    S --> T[Documentation Complete]
 ```
 
 ---
 
 ## 🏗️ IR Framework Comparison
 
-| Framework | Phases | Advantages | Best For |
-|-----------|--------|------------|----------|
-| **NIST SP 800-61** | 4-phase cyclical | Comprehensive, widely adopted | Government, regulated industries |
-| **SANS Methodology** | 6-step linear | Practical, detailed procedures | Commercial organizations |
-| **ISO/IEC 27035** | 5-phase structured | International standard | Global organizations |
-| **Custom Hybrid** | Organization-specific | Tailored to specific needs | Unique operational requirements |
+| Framework | Phases | Key Strengths | Best Application |
+|-----------|--------|---------------|------------------|
+| **NIST SP 800-61** | 4-phase cyclical | Comprehensive, widely adopted, continuous improvement focus | Government, regulated industries |
+| **SANS Methodology** | 6-step linear | Practical procedures, detailed guidance, industry-proven | Commercial organizations |
+| **ISO/IEC 27035** | 5-phase structured | International standard, risk-based approach | Global organizations |
+| **MITRE ATT&CK Enhanced** | Framework-agnostic integration | Technique-driven analysis, threat actor context | Advanced security programs |
 
 ---
 
-## 🔍 Incident Classification Matrix
+## 🔍 Enhanced Incident Classification
 
-### Severity Assessment Factors
+### ATT&CK-Informed Severity Assessment
 
-| Factor | Critical (5) | High (4) | Medium (3) | Low (2) | Minimal (1) |
-|--------|-------------|----------|------------|---------|-------------|
-| **Business Impact** | Complete service outage | Major degradation | Moderate impact | Minor impact | No service impact |
-| **Data Sensitivity** | PII/PHI/Financial exposed | Internal sensitive | Business confidential | Public info | No data involved |
-| **System Criticality** | Core production | Important production | Development/test | Isolated systems | Non-production |
-| **Threat Sophistication** | APT/Nation-state | Organized crime | Skilled individual | Script kiddie | Accidental |
+| Factor | Weight | Critical (5) | High (4) | Medium (3) | Low (2) | Minimal (1) |
+|--------|--------|-------------|----------|------------|---------|-------------|
+| **Business Impact** | 25% | Complete service outage | Major degradation | Moderate impact | Minor impact | No service impact |
+| **Data Sensitivity** | 20% | PII/PHI/Financial exposed | Internal sensitive | Business confidential | Public info | No data involved |
+| **ATT&CK Sophistication** | 20% | Advanced persistent threat | Multi-stage attack | Single technique | Basic technique | Accidental |
+| **System Criticality** | 15% | Core production | Important production | Development/test | Isolated systems | Non-production |
+| **Threat Actor Profile** | 10% | Nation-state APT | Organized crime | Skilled individual | Script kiddie | Insider/accidental |
+| **Technique Coverage** | 10% | Zero detection | Limited detection | Partial detection | Good detection | Full coverage |
 
-### Response Timeline Requirements
+### Response Timeline Matrix
 
 ```mermaid
 graph LR
@@ -148,129 +159,149 @@ graph LR
     B --> C[Medium: < 4 hours]
     C --> D[Low: < 24 hours]
     
-    E[Executive Notification] --> A
-    F[Team Assembly] --> B
-    G[Standard Process] --> C
-    H[Best Effort] --> D
+    E[Executive + Law Enforcement] --> A
+    F[Senior Management + Legal] --> B
+    G[Department Management] --> C
+    H[Standard Process] --> D
 ```
 
 ---
 
-## 📈 Specialized Incident Response
+## 📈 Specialized Incident Response Approaches
 
-### Ransomware Response Priorities
+### Ransomware Response with ATT&CK
 
-| Phase | Duration | Key Activities | Success Criteria |
-|-------|----------|----------------|------------------|
-| **Immediate** | 0-30 minutes | Network isolation, scope assessment | Spread contained, executive notified |
-| **Analysis** | 30 min - 4 hours | Malware identification, impact assessment | Threat characterized, recovery plan |
-| **Recovery** | 4-48 hours | System restoration, validation testing | Services restored, security validated |
-| **Monitoring** | 48+ hours | Enhanced surveillance, threat hunting | No reinfection, lessons documented |
+| Phase | Duration | Key Activities | ATT&CK Techniques | Success Criteria |
+|-------|----------|----------------|-------------------|------------------|
+| **Immediate** | 0-30 minutes | Network isolation, scope assessment | T1486, T1490 analysis | Spread contained, C2 blocked |
+| **Analysis** | 30 min - 4 hours | Malware family ID, ATT&CK mapping | Full technique timeline | Attribution completed, impact assessed |
+| **Recovery** | 4-48 hours | System restoration, validation | T1059 cleanup verification | Services restored, no persistence |
+| **Monitoring** | 48+ hours | Enhanced surveillance, hunting | T1055, T1027 detection | No reinfection, gaps addressed |
 
 ### Data Breach Response Framework
-- **Risk Assessment** - Impact analysis and regulatory requirements
-- **Stakeholder Notification** - Internal, external, and regulatory communications
-- **Evidence Preservation** - Legal hold and forensic collection procedures
-- **Remediation Planning** - Technical fixes and process improvements
+- **ATT&CK Analysis** - Map data access techniques (T1005, T1039, T1025)
+- **Risk Assessment** - Impact analysis using technique sophistication
+- **Stakeholder Notification** - Timeline based on attack progression evidence
+- **Remediation Planning** - Technique-specific defensive improvements
 
-### APT Investigation Approach
-- **Intelligence-Led Analysis** - Threat actor profiling and campaign mapping
-- **Coordinated Response** - Simultaneous multi-system containment
-- **Long-term Monitoring** - Extended surveillance and threat hunting
-- **Attribution Support** - Evidence collection for potential prosecution
+### APT Investigation with ATT&CK
+- **Intelligence-Led Analysis** - Threat actor TTPs and campaign correlation
+- **Coordinated Response** - Multi-system technique-based containment
+- **Long-term Monitoring** - Persistence technique surveillance
+- **Attribution Support** - Technique evidence for threat attribution
 
 ---
 
 ## ⚖️ Legal and Regulatory Integration
 
-### Notification Requirements Matrix
+### Enhanced Notification Requirements
 
-| Regulation | Jurisdiction | Timeline | Requirements |
-|------------|--------------|----------|--------------|
-| **GDPR** | EU/EEA | 72 hours (regulator) | Detailed incident description, impact assessment |
-| **CCPA** | California, US | Without unreasonable delay | Consumer notification, AG if >500 residents |
-| **HIPAA** | US Healthcare | 60 days (HHS) | Risk assessment, affected individuals |
-| **PCI DSS** | Payment cards | Immediately (brands) | Forensic investigation, remediation plan |
+| Regulation | Jurisdiction | Timeline | ATT&CK Enhancement |
+|------------|--------------|----------|-------------------|
+| **GDPR** | EU/EEA | 72 hours | Technique sophistication affects risk assessment |
+| **CCPA** | California, US | Without unreasonable delay | Attack progression timeline informs urgency |
+| **HIPAA** | US Healthcare | 60 days | Data access techniques (T1005, T1039) determine scope |
+| **PCI DSS** | Payment cards | Immediately | Financial data techniques trigger specific requirements |
 
-### Evidence Management Standards
-- **Chain of Custody** - Documented handling from collection to court
-- **Legal Hold** - Preservation of relevant documents and data
-- **Expert Testimony** - Technical witness preparation and qualification
-- **Discovery Support** - Evidence production for legal proceedings
-
----
-
-## 🧠 IR Team Development
-
-### Core Competency Framework
-
-| Role | Technical Skills | Soft Skills | Certification Targets |
-|------|-----------------|-------------|----------------------|
-| **IR Manager** | IR frameworks, risk management | Leadership, communication | CISSP, CISM, GCIH |
-| **Security Analyst** | SIEM, threat hunting, forensics | Analytical thinking, documentation | GCIH, GNFA, CySA+ |
-| **Forensic Specialist** | Digital forensics, malware analysis | Attention to detail, persistence | GCFA, GCFE, EnCE |
-| **Communications Lead** | Crisis communication, media relations | Public speaking, writing | No specific technical certs |
-
-### Training and Exercise Program
-- **Initial Training** - 40 hours covering IR fundamentals and organization-specific procedures
-- **Ongoing Development** - 20 hours annually including advanced techniques and emerging threats
-- **Tabletop Exercises** - Quarterly scenario-based discussion exercises
-- **Functional Exercises** - Semi-annual hands-on simulations with actual tools
+### Evidence Management with ATT&CK Context
+- **Chain of Custody** - ATT&CK technique artifacts preserved with context
+- **Legal Hold** - Technique-specific evidence preservation requirements
+- **Expert Testimony** - ATT&CK framework provides technical credibility
+- **Discovery Support** - Structured technique evidence for legal proceedings
 
 ---
 
-## 📊 IR Metrics and Performance
+## 🧠 Enhanced IR Team Development
 
-### Key Performance Indicators
+### ATT&CK-Integrated Competency Framework
 
-| Metric | Target | Measurement Method | Improvement Actions |
-|--------|--------|--------------------|-------------------|
-| **Mean Time to Detection** | < 4 hours | Time from incident start to detection | Enhanced monitoring, threat hunting |
-| **Mean Time to Response** | < 30 minutes | Time from detection to initial response | Process automation, staff training |
-| **Mean Time to Containment** | < 2 hours | Time from response to threat containment | Playbook optimization, tool integration |
-| **False Positive Rate** | < 5% | Alerts requiring no action / total alerts | Rule tuning, analyst training |
+| Role | Technical Skills | ATT&CK Competencies | Certification Targets |
+|------|-----------------|-------------------|----------------------|
+| **IR Manager** | IR frameworks, risk management | ATT&CK program strategy, maturity assessment | CISSP, CISM, GCIH |
+| **Security Analyst** | SIEM, threat hunting, forensics | Technique identification, hunt hypothesis development | GCIH, GNFA, CySA+ |
+| **Forensic Specialist** | Digital forensics, malware analysis | Technique reconstruction, evidence mapping | GCFA, GCFE, EnCE |
+| **Threat Hunter** | Proactive hunting, analytics | ATT&CK-driven hunting, technique coverage | GCTI, GNFA, GDAT |
+| **Detection Engineer** | Rule development, automation | Technique-based detection, coverage analysis | GCDA, GIAC, Custom |
 
-### Maturity Assessment Framework
+### Enhanced Training Program
+- **ATT&CK Foundation** - 16 hours covering framework fundamentals and navigation
+- **Technique Mastery** - 24 hours hands-on technique identification and analysis
+- **Hunt Development** - 16 hours ATT&CK-driven hunting methodology
+- **Detection Engineering** - 20 hours technique-based rule development
+- **Program Management** - 12 hours maturity assessment and strategic planning
+
+---
+
+## 📊 Advanced IR Metrics and Performance
+
+### ATT&CK-Enhanced KPIs
+
+| Metric Category | Traditional KPI | ATT&CK Enhancement | Target |
+|-----------------|-----------------|-------------------|--------|
+| **Detection Performance** | Mean Time to Detection | Technique-specific MTTD | < 4 hours average, < 1 hour for high-priority techniques |
+| **Response Effectiveness** | Mean Time to Response | ATT&CK-informed response prioritization | < 30 minutes for advanced techniques |
+| **Coverage Assessment** | Alert volume metrics | Technique coverage percentage | > 80% coverage of relevant techniques |
+| **Hunt Effectiveness** | Hunt success rate | Technique-based hunt success | > 15% of hunts identify new techniques |
+| **Program Maturity** | Compliance metrics | ATT&CK maturity level progression | Level 3+ (Defined) within 12 months |
+
+### Comprehensive Maturity Model
 ```
-Level 1 (Initial): Ad-hoc processes, reactive approach
+Level 1 (Initial): Basic incident response, ad-hoc ATT&CK usage
     ↓
-Level 2 (Managed): Documented procedures, defined roles
+Level 2 (Managed): Documented procedures, systematic technique tracking
     ↓  
-Level 3 (Defined): Standardized processes, regular testing
+Level 3 (Defined): ATT&CK-integrated processes, technique-based detection
     ↓
-Level 4 (Quantitative): Metrics-driven, continuous improvement
+Level 4 (Quantitative): Metrics-driven improvement, coverage analytics
     ↓
-Level 5 (Optimizing): Innovation, industry leadership
+Level 5 (Optimizing): Predictive capabilities, community contribution
 ```
 
 ---
 
-## 🔗 Essential Resources
+## 🔗 Essential Resources and References
 
-### Official Documentation
-- [NIST SP 800-61](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final) - Computer Security Incident Handling Guide
-- [SANS Incident Response Process](https://www.sans.org/white-papers/504/) - Six-Step Incident Response Methodology
-- [MITRE ATT&CK](https://attack.mitre.org/) - Adversary tactics and techniques framework
+### Official Framework Documentation
+- [NIST SP 800-61 Rev 2](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final) - Computer Security Incident Handling Guide
+- [MITRE ATT&CK Framework](https://attack.mitre.org/) - Adversary tactics, techniques, and procedures
+- [SANS Incident Response Process](https://www.sans.org/white-papers/504/) - Six-Step methodology
+- [ISO/IEC 27035](https://www.iso.org/standard/78973.html) - Information security incident management
 
-### Training and Certification
-- [SANS FOR508](https://www.sans.org/cyber-security-courses/advanced-incident-response-threat-hunting-digital-forensics/) - Advanced Incident Response
+### ATT&CK Resources and Tools
+- [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) - Interactive technique visualization
+- [CALDERA](https://caldera.mitre.org/) - Automated adversary emulation platform
+- [ATT&CK Workbench](https://github.com/center-for-threat-informed-defense/attack-workbench-frontend) - Customizable knowledge base
+- [DeTT&CK](https://github.com/rabobank-cdc/DeTTECT) - Detection engineering and coverage analysis
+
+### Training and Certification Programs
+- [SANS FOR508](https://www.sans.org/cyber-security-courses/advanced-incident-response-threat-hunting-digital-forensics/) - Advanced incident response and forensics
+- [SANS FOR578](https://www.sans.org/cyber-security-courses/cyber-threat-intelligence/) - Cyber threat intelligence with ATT&CK focus
+- [MITRE ATT&CK Training](https://attack.mitre.org/resources/training/) - Official framework training materials
 - [GCIH Certification](https://www.giac.org/certification/certified-incident-handler-gcih) - GIAC Certified Incident Handler
-- [EC-Council CHFI](https://www.eccouncil.org/programs/computer-hacking-forensic-investigator-chfi/) - Computer Hacking Forensic Investigator
 
-### Tools and Platforms
-- [TheHive](https://thehive-project.org/) - Open source incident response platform
-- [MISP](https://www.misp-project.org/) - Malware Information Sharing Platform
+### Open Source Tools and Platforms
+- [TheHive](https://thehive-project.org/) - Scalable incident response platform
+- [MISP](https://www.misp-project.org/) - Malware information sharing with ATT&CK integration
 - [Volatility](https://www.volatilityfoundation.org/) - Advanced memory forensics framework
+- [Yara](https://virustotal.github.io/yara/) - Pattern matching engine for malware research
 
-### Legal and Compliance
-- [State Breach Notification Laws](https://www.ncsl.org/research/telecommunications-and-information-technology/security-breach-notification-laws.aspx) - US state requirements
-- [GDPR Guidance](https://edpb.europa.eu/our-work-tools/our-documents/guidelines_en) - European Data Protection Board
-- [Incident Response Legal Guide](https://www.sans.org/white-papers/33901/) - Legal considerations for IR teams
+### Legal and Compliance Resources
+- [GDPR Breach Notification Guidelines](https://edpb.europa.eu/our-work-tools/our-documents/guidelines_en) - European data protection requirements
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) - Risk management approach
+- [State Breach Laws](https://www.ncsl.org/research/telecommunications-and-information-technology/security-breach-notification-laws.aspx) - US state notification requirements
+- [ENISA Incident Response Guidelines](https://www.enisa.europa.eu/) - European cybersecurity guidance
 
-### Industry Resources  
+### Industry Communities and Standards
 - [FIRST.org](https://www.first.org/) - Forum of Incident Response and Security Teams
-- [US-CERT](https://www.cisa.gov/uscert) - United States Computer Emergency Readiness Team
-- [ENISA](https://www.enisa.europa.eu/) - European Union Agency for Cybersecurity
+- [US-CERT](https://www.cisa.gov/uscert) - US Computer Emergency Readiness Team
+- [ATT&CK Community](https://medium.com/mitre-attack) - Framework updates and research
+- [OASIS CTI](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti) - Cyber threat intelligence standards
+
+### Advanced Research and Development
+- [MITRE Engenuity](https://mitre-engenuity.org/) - ATT&CK evaluations and research
+- [Center for Threat-Informed Defense](https://ctid.mitre-engenuity.org/) - Community-driven security research
+- [ATT&CK Data Sources](https://attack.mitre.org/datasources/) - Detection data source project
+- [Security Stack Mappings](https://center-for-threat-informed-defense.github.io/security-stack-mappings/) - Technology mapping to ATT&CK
 
 ---
 
