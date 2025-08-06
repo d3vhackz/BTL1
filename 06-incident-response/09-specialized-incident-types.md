@@ -293,3 +293,284 @@ def calculate_insider_threat_risk(user_activity):
     
     # Weighted risk calculation
     total_risk = sum(
+        factor_score * get_weight(factor_name) 
+        for factor_name, factor_score in risk_factors.items()
+    )
+    
+    return classify_risk_level(total_risk)
+```
+
+---
+
+## Advanced Persistent Threats (APTs)
+
+APT incidents represent the most sophisticated and persistent cyber threats, requiring specialized long-term response strategies.
+
+### APT Detection and Response
+
+#### **APT Lifecycle and Intervention Points**
+
+```mermaid
+graph LR
+    A[Reconnaissance] --> B[Initial Access]
+    B --> C[Establishment]
+    C --> D[Persistence]
+    D --> E[Privilege Escalation]
+    E --> F[Internal Reconnaissance]
+    F --> G[Lateral Movement]
+    G --> H[Data Collection]
+    H --> I[Exfiltration]
+    
+    A1[OSINT Monitoring] --> A
+    B1[Email/Web Security] --> B
+    C1[Endpoint Detection] --> C
+    D1[System Monitoring] --> D
+    E1[Privilege Analytics] --> E
+    F1[Network Monitoring] --> F
+    G1[Lateral Movement Detection] --> G
+    H1[DLP Systems] --> H
+    I1[Data Egress Monitoring] --> I
+```
+
+#### **APT Response Methodology**
+
+**Intelligence-Led Response Process**:
+
+| Phase | Duration | Key Activities | Success Metrics |
+|-------|----------|----------------|-----------------|
+| **Threat Intelligence** | 1-2 days | IOC correlation, campaign analysis, threat actor profiling | Threat actor identification, attack vector understanding |
+| **Hunt Operations** | 3-10 days | Proactive threat hunting, compromise assessment | Complete compromise scope, attack timeline |
+| **Coordinated Disruption** | 1-2 days | Simultaneous containment across all affected systems | Adversary access termination, evidence preservation |
+| **Remediation** | 2-6 weeks | System rebuilding, security improvements, monitoring | Threat elimination verification, security enhancement |
+
+**APT Investigation Toolkit**:
+
+```bash
+# APT hunting commands and techniques
+# Network connection analysis for C2 communications
+netstat -antlp | awk '{print $5}' | grep -v '127.0.0.1' | sort -u
+
+# Process analysis for living-off-the-land techniques
+ps aux | grep -E "(powershell|wmic|rundll32|regsvr32)"
+
+# Persistence mechanism checks
+ls -la /etc/cron* /var/spool/cron*
+find /home -name ".ssh" -type d
+
+# Memory analysis indicators
+strings /proc/*/mem | grep -E "(http://|https://)" | head -20
+```
+
+#### **APT Eradication Strategy**
+
+**Coordinated Response Planning**:
+
+```markdown
+## APT Eradication Coordination Plan
+
+### Pre-Eradication Preparation (24-48 hours)
+**Intelligence Gathering:**
+- [ ] Complete compromise assessment
+- [ ] Map all affected systems and accounts
+- [ ] Identify all persistence mechanisms
+- [ ] Document attack infrastructure
+
+**Response Coordination:**
+- [ ] Assemble specialized response team
+- [ ] Coordinate with external experts
+- [ ] Plan simultaneous response actions
+- [ ] Prepare backup systems and processes
+
+### Coordinated Eradication (Simultaneous Execution)
+**System Actions (Execute simultaneously):**
+- [ ] Disable compromised accounts
+- [ ] Remove malware and persistence mechanisms
+- [ ] Update all system credentials
+- [ ] Apply security patches and configurations
+
+**Network Actions:**
+- [ ] Block C2 infrastructure
+- [ ] Update firewall and proxy rules
+- [ ] Implement enhanced monitoring
+- [ ] Activate threat hunting protocols
+
+**Monitoring Phase (30-90 days):**
+- [ ] Enhanced logging and monitoring
+- [ ] Regular threat hunting activities
+- [ ] IOC monitoring and alerting
+- [ ] Behavioral analytics tuning
+```
+
+### Long-term APT Defense
+
+#### **APT-Focused Security Architecture**
+
+**Defense in Depth for APT Protection**:
+
+| Layer | Primary Controls | APT-Specific Enhancements |
+|-------|-----------------|---------------------------|
+| **Perimeter** | Firewalls, IPS, email security | Threat intelligence integration, behavioral analysis |
+| **Network** | Segmentation, monitoring, NAC | East-west traffic inspection, anomaly detection |
+| **Endpoint** | EDR, antivirus, hardening | Memory protection, application whitelisting |
+| **Application** | WAF, secure coding, testing | Runtime protection, privilege management |
+| **Data** | Classification, DLP, encryption | Data flow monitoring, access analytics |
+| **Identity** | MFA, PAM, IAM | Behavioral analytics, privilege escalation detection |
+
+#### **APT Threat Hunting Program**
+
+**Continuous Hunting Methodology**:
+
+```python
+# APT threat hunting automation framework
+class APTHuntingEngine:
+    def __init__(self):
+        self.hunt_cycles = ['weekly', 'monthly', 'quarterly']
+        self.hunt_techniques = self.load_mitre_techniques()
+        self.threat_intelligence = self.load_ti_feeds()
+    
+    def execute_hunt_cycle(self, cycle_type):
+        hunt_plan = self.generate_hunt_plan(cycle_type)
+        
+        for hunt_technique in hunt_plan:
+            results = self.execute_hunt_technique(hunt_technique)
+            
+            if results.has_findings():
+                self.escalate_to_incident_response(results)
+                
+            self.document_hunt_results(hunt_technique, results)
+    
+    def generate_hunt_hypotheses(self, threat_landscape):
+        """Generate hunting hypotheses based on current threat intelligence"""
+        hypotheses = []
+        
+        for apt_group in self.threat_intelligence.active_groups:
+            for technique in apt_group.known_techniques:
+                if technique.applicable_to_environment():
+                    hypotheses.append(
+                        self.create_hunt_hypothesis(apt_group, technique)
+                    )
+        
+        return hypotheses
+```
+
+**Hunt Team Structure and Responsibilities**:
+
+| Role | Responsibilities | Skills Required |
+|------|-----------------|-----------------|
+| **Hunt Lead** | Strategy, coordination, stakeholder communication | Leadership, threat intelligence, business context |
+| **Threat Intelligence Analyst** | IOC research, campaign tracking, attribution | TI platforms, OSINT, analytical thinking |
+| **Technical Analyst** | Data analysis, tool operation, hypothesis testing | SIEM, scripting, network/host forensics |
+| **Malware Analyst** | Reverse engineering, IOC extraction | Assembly, debugging, virtualization |
+
+---
+
+## Incident-Specific Response Considerations
+
+### Cloud Service Provider Incidents
+
+#### **Shared Responsibility Considerations**
+
+**AWS/Azure/GCP Incident Response**:
+
+| Service Type | Customer Responsibility | Provider Responsibility | Investigation Approach |
+|-------------|------------------------|------------------------|----------------------|
+| **IaaS (EC2/VM)** | OS, applications, data, network configs | Physical security, hypervisor | Full customer investigation |
+| **PaaS (RDS/App Service)** | Applications, data, access management | Platform security, patching | Coordinated investigation |
+| **SaaS (O365/G Suite)** | User behavior, access policies | Application security, infrastructure | Provider-led with customer coordination |
+
+#### **Cloud-Specific Evidence Collection**
+
+```bash
+# AWS evidence collection examples
+# CloudTrail logs for API activity
+aws logs describe-log-groups --log-group-name-prefix CloudTrail
+
+# VPC Flow Logs for network activity
+aws ec2 describe-flow-logs
+
+# Security Group and NACL analysis
+aws ec2 describe-security-groups
+aws ec2 describe-network-acls
+
+# Instance metadata and configuration
+aws ec2 describe-instances --instance-ids i-1234567890abcdef0
+```
+
+### Industrial Control System (ICS/SCADA) Incidents
+
+#### **ICS Incident Unique Characteristics**
+
+**Critical Considerations**:
+- **Safety Impact**: Physical safety and environmental consequences
+- **Operational Continuity**: Production and service delivery impacts
+- **Specialized Systems**: Legacy systems with limited security controls
+- **Regulatory Requirements**: Industry-specific compliance obligations
+- **Air-Gapped Networks**: Isolated systems requiring specialized forensics
+
+#### **ICS Response Priorities**
+
+```mermaid
+graph TD
+    A[ICS Incident Detected] --> B[Safety Assessment]
+    B --> C{Immediate Safety Risk?}
+    C -->|Yes| D[Emergency Shutdown Procedures]
+    C -->|No| E[Operational Impact Assessment]
+    
+    D --> F[Safety Team Response]
+    E --> G[Production Impact Analysis]
+    
+    F --> H[Regulatory Notification]
+    G --> I[Business Continuity Actions]
+    
+    H --> J[Technical Investigation]
+    I --> J
+    J --> K[Evidence Collection]
+    K --> L[Recovery Planning]
+```
+
+### Supply Chain Compromise Incidents
+
+#### **Third-Party Risk Assessment**
+
+**Vendor Impact Analysis Framework**:
+
+| Vendor Category | Access Level | Impact Assessment | Response Actions |
+|-----------------|--------------|-------------------|------------------|
+| **Critical Infrastructure** | Core system access | Business operation disruption | Immediate isolation, alternative sourcing |
+| **Software Vendors** | Code deployment, updates | Potential widespread compromise | Software integrity verification, rollback |
+| **Service Providers** | Managed services, cloud | Data exposure, service disruption | Contract review, security validation |
+| **Business Partners** | Limited system access | Data sharing compromise | Access review, communication coordination |
+
+#### **Supply Chain Response Coordination**
+
+```markdown
+## Supply Chain Incident Response Plan
+
+### Immediate Actions (0-4 hours)
+**Vendor Coordination:**
+- [ ] Contact vendor security team
+- [ ] Request incident details and timeline
+- [ ] Assess vendor response capabilities
+- [ ] Establish communication protocol
+
+**Internal Assessment:**
+- [ ] Inventory vendor access and systems
+- [ ] Review data sharing arrangements
+- [ ] Assess potential compromise scope
+- [ ] Implement precautionary measures
+
+### Investigation Coordination (4-24 hours)
+**Joint Investigation:**
+- [ ] Share relevant threat intelligence
+- [ ] Coordinate forensic analysis efforts
+- [ ] Align investigation timelines
+- [ ] Plan coordinated public communications
+
+**Risk Mitigation:**
+- [ ] Implement additional monitoring
+- [ ] Review and restrict vendor access
+- [ ] Validate data integrity
+- [ ] Prepare contingency procedures
+```
+
+[⬆️ Back to Incident Response](./README.md)
