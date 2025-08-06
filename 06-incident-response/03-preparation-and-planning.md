@@ -1,262 +1,364 @@
-# 6.3: Preparation Phase
+# 6.3: Preparation and Planning
 
-Preparation is the foundation of effective incident response. This phase involves creating comprehensive plans, building skilled teams, and establishing the infrastructure needed to respond effectively when incidents occur.
+Preparation is the foundation of effective incident response. The investments made during peaceful times determine how well an organization can handle crisis situations. This phase focuses on building capabilities, establishing procedures, and creating the infrastructure needed for rapid, effective response.
 
 ---
 
-## Incident Response Plans (IRP)
+## IR Policy Development
 
-**A well-documented IRP** prevents confusion during high-stress incidents and ensures consistent, effective responses.
+An incident response policy provides the authoritative framework that governs how the organization responds to security incidents.
 
-### IRP Structure Framework
+### Policy Components
 
-```mermaid
-graph TD
-    A[Incident Response Plan] --> B[Preparation]
-    A --> C[Identification]
-    A --> D[Containment]
-    A --> E[Eradication]
-    A --> F[Recovery]
-    A --> G[Lessons Learned]
-    
-    B --> B1[Team Training]
-    B --> B2[Resource Allocation]
-    B --> B3[Scenario Planning]
-    
-    C --> C1[Detection Methods]
-    C --> C2[Reporting Procedures]
-    C --> C3[Initial Assessment]
-    
-    D --> D1[Short-term Actions]
-    D --> D2[Evidence Preservation]
-    D --> D3[Communication Plans]
+#### **Scope and Definitions**
+- **Coverage**: Systems, networks, data, and personnel included
+- **Incident Types**: Categories of incidents covered by the policy
+- **Roles and Responsibilities**: Clear assignment of duties and authorities
+- **Definitions**: Common terminology to ensure consistent understanding
+
+#### **Authority and Decision-Making**
+- **Escalation Paths**: When and how to escalate incidents
+- **Decision Authority**: Who can make containment, communication, and recovery decisions
+- **Budget Authority**: Spending limits for emergency response actions
+- **Legal Authority**: Coordination with legal counsel and law enforcement
+
+#### **Communication Requirements**
+- **Internal Notifications**: Management, IT, legal, HR, public relations
+- **External Notifications**: Customers, partners, regulators, law enforcement
+- **Timeline Requirements**: Regulatory deadlines and business commitments
+- **Communication Channels**: Primary and backup communication methods
+
+### Policy Implementation Checklist
+
+```markdown
+✓ Executive sponsorship and approval obtained
+✓ Cross-functional stakeholder input incorporated  
+✓ Legal and compliance review completed
+✓ Integration with existing policies validated
+✓ Staff training and awareness conducted
+✓ Annual review and update process established
 ```
 
-### 1. Preparation Section
+---
 
-#### Team Readiness
-- **Response plan development** for different incident types
-- **Simulated scenario exercises** to test team effectiveness  
-- **Resource provisioning** (laptops, software, forensic equipment)
-- **Training programs** tailored to specific roles and responsibilities
-- **Budget approval** for abandoning normal duties during incidents
+## Team Training and Development
 
-#### Continuous Training Requirements
-- **Security analysts**: Alert triage and incident classification
-- **Forensic analysts**: Evidence acquisition and preservation
-- **PR/Communications**: Media response and stakeholder notification
-- **Management**: Decision-making under pressure
-- **Legal**: Compliance and evidence handling procedures
+A well-trained team is the most critical component of incident response capability.
 
-### 2. Identification Section
+### Core Competency Areas
 
-#### Detection and Reporting Framework
-- **When**: Timestamp requirements and timezone considerations
-- **Who**: Discovery source (security team, employee, external notification)
-- **How**: Detection method (automated alert, user report, external tip)
-- **What**: Affected systems and business units
-- **Impact**: Operational disruption assessment
-- **Scope**: Extent of compromise and damage evaluation
+| Competency | Target Audience | Training Methods |
+|------------|----------------|------------------|
+| **IR Fundamentals** | All team members | Online courses, workshops, certifications |
+| **Technical Analysis** | Security analysts, forensic specialists | Hands-on labs, vendor training, conferences |
+| **Leadership and Coordination** | IR managers, senior analysts | Leadership development, simulation exercises |
+| **Communication Skills** | All team members | Presentation training, crisis communication workshops |
+| **Legal and Compliance** | Legal counsel, IR managers | Legal seminars, regulatory updates, case studies |
 
-#### Incident Prioritization Matrix
+### Training Program Structure
 
-| Criticality Level | Response Time | Examples |
-|------------------|---------------|----------|
-| **Critical** | < 15 minutes | Active data exfiltration, ransomware |
-| **High** | < 1 hour | Confirmed malware, privilege escalation |
-| **Medium** | < 4 hours | Suspicious activity, failed attacks |
-| **Low** | < 24 hours | Policy violations, minor anomalies |
+#### **Initial Training (40 hours)**
+- IR fundamentals and frameworks (8 hours)
+- Organization-specific procedures (8 hours)  
+- Technical tools and systems (16 hours)
+- Communication and documentation (4 hours)
+- Legal and compliance requirements (4 hours)
 
-| Impact Level | Business Effect | Examples |
-|-------------|----------------|----------|
-| **Severe** | Operations halted | Payment systems down, manufacturing stopped |
-| **Major** | Significant disruption | Email systems compromised, databases locked |
-| **Moderate** | Limited impact | Individual workstations affected |
-| **Minor** | Minimal disruption | Non-critical systems impacted |
+#### **Ongoing Development (20 hours annually)**
+- Advanced technical skills (8 hours)
+- Emerging threats and trends (4 hours)
+- Process improvements and lessons learned (4 hours)
+- Cross-training and role flexibility (4 hours)
 
-### 3. Containment Section
-
-#### Evidence Preservation Guidelines
-- **Memory analysis priority** - volatile data collection before shutdown
-- **Write-blocker usage** for disk imaging and analysis
-- **Chain of custody** documentation requirements
-- **Photography** of physical evidence and system states
-
-#### Containment Strategy Selection
-
-| Containment Type | Use Case | Considerations |
-|-----------------|----------|----------------|
-| **Network Isolation** | Malware spread prevention | May lose remote access |
-| **Account Disabling** | Credential compromise | User productivity impact |
-| **Service Shutdown** | Critical system protection | Business continuity needs |
-| **Backup Activation** | System replacement | Recovery time objectives |
-
-### 4. Eradication & Recovery Sections
-
-#### Analysis Requirements
-- **MITRE ATT&CK mapping** for technique identification
-- **Root cause analysis** using forensic examination
-- **IOC generation** for threat hunting and sharing
-- **Timeline reconstruction** for complete understanding
-
-#### Defensive Hardening
-- **Patch management** for exploited vulnerabilities
-- **Configuration changes** to prevent reoccurrence  
-- **NIPS/HIPS rule updates** using discovered IOCs
-- **Run-book creation** for similar future incidents
+#### **Specialized Training (As needed)**
+- Digital forensics certification
+- Malware analysis and reverse engineering
+- Cloud security incident response
+- Industrial control system security
+- Privacy and data protection law
 
 ---
 
-## Incident Response Teams
+## Tabletop Exercises and Simulations
 
-### Team Structure and Roles
+Regular exercises test and improve incident response capabilities in a controlled environment.
 
-#### Core Leadership
-**Incident Commander**
-- **Primary responsibility**: Coordinate all response efforts
-- **Communication hub**: Single point of contact for stakeholders
-- **Decision authority**: Resource allocation and strategy decisions
-- **Reporting**: Regular updates to management and C-suite
+### Exercise Types and Complexity
 
-#### Technical Specialists
+#### **Tabletop Exercises**
+- **Format**: Discussion-based, scenario-driven meetings
+- **Duration**: 2-4 hours
+- **Frequency**: Quarterly
+- **Focus**: Decision-making, communication, coordination
 
-**Security Analysts**
-- **Alert triage**: Initial incident classification and prioritization
-- **Investigation**: Technical analysis of security events
-- **Tool expertise**: SIEM, IDS/IPS, and monitoring platform proficiency
-- **Documentation**: Detailed technical findings and evidence
-
-**Forensic Analysts** 
-- **Evidence acquisition**: Forensically sound data collection
-- **Deep analysis**: Advanced investigation techniques
-- **Legal preparation**: Court-admissible evidence preparation
-- **Tool mastery**: Specialized forensic software and hardware
-
-**Threat Intelligence Analysts**
-- **Context provision**: Actor attribution and campaign analysis
-- **IOC validation**: Threat hunting and exposure assessment
-- **Intelligence sharing**: External community collaboration
-- **MITRE ATT&CK mapping**: Technique and tactic identification
-
-#### Business Stakeholders
-
-**Management/C-Suite**
-- **Resource authorization**: Budget and personnel allocation
-- **Strategic decisions**: Business impact and response priorities
-- **External relations**: Media and regulatory communication
-- **Risk acceptance**: Tolerance levels and escalation triggers
-
-**Human Resources**
-- **Personnel issues**: Insider threat response
-- **Disciplinary actions**: Policy violation consequences
-- **Communication**: Employee notification and training
-- **Legal coordination**: Employment law compliance
-
-**Public Relations**
-- **Media relations**: Press statement preparation and delivery
-- **Stakeholder communication**: Customer and partner notification
-- **Reputation management**: Brand protection during incidents
-- **Regulatory coordination**: Required disclosure management
-
-**Legal Team**
-- **Compliance assurance**: Regulatory requirement adherence
-- **Evidence oversight**: Legal admissibility standards
-- **Liability assessment**: Risk and exposure evaluation
-- **External coordination**: Law enforcement and regulatory interaction
-
-### Team Activation Thresholds
-
-#### Automatic Activation Triggers
-- **Data breach confirmed** with customer information exposure
-- **Ransomware deployment** across multiple systems
-- **Critical infrastructure** compromise or disruption
-- **Executive system** compromise or targeting
-
-#### Escalation Criteria
-- **Financial impact** exceeding predetermined thresholds
-- **Media attention** or public exposure
-- **Regulatory requirements** triggering mandatory disclosure
-- **Customer impact** affecting service delivery
-
----
-
-## Asset Inventory and Risk Assessment
-
-### Asset Inventory Management
-
-#### Comprehensive Asset Database (CMDB)
-**Asset Categories**:
-- **Endpoints**: Desktops, laptops, mobile devices
-- **Servers**: Physical and virtual infrastructure  
-- **Network devices**: Firewalls, switches, routers, load balancers
-- **IoT devices**: Connected sensors, appliances, and systems
-- **Applications**: Business-critical software and services
-
-#### Critical Asset Information
-- **System owner** and primary contact information
-- **Operating system** version and patch level
-- **Installed software** inventory and versions
-- **Network configuration** including IP addresses and VLANs
-- **Data classification** and sensitivity levels
-- **Business criticality** rating and dependencies
-
-### Risk Assessment Framework
-
-#### Risk Calculation Matrix
+**Sample Scenario Structure**:
 ```
-Risk = Threat × Vulnerability × Impact
+Initial Alert: [Describe the triggering event]
+↓
+Inject 1: [Additional information revealed during investigation]
+↓  
+Inject 2: [Complications or escalation factors]
+↓
+Inject 3: [External pressures or deadlines]
+↓
+Resolution: [Discuss outcomes and decisions made]
 ```
 
-#### Asset Prioritization Criteria
+#### **Functional Exercises**
+- **Format**: Hands-on simulation with actual tools and systems
+- **Duration**: 4-8 hours
+- **Frequency**: Semi-annually
+- **Focus**: Technical execution, tool proficiency, process validation
 
-| Priority Level | Characteristics | Response Requirements |
-|---------------|----------------|----------------------|
-| **Critical** | Mission-essential, customer-facing | 24/7 monitoring, immediate response |
-| **High** | Important business functions | Business hours monitoring, <4hr response |
-| **Medium** | Supporting systems | Standard monitoring, <24hr response |
-| **Low** | Non-essential systems | Basic monitoring, best-effort response |
+#### **Full-Scale Exercises**
+- **Format**: Comprehensive simulation involving all stakeholders
+- **Duration**: 1-2 days
+- **Frequency**: Annually
+- **Focus**: End-to-end capability testing, organizational coordination
 
-#### Risk Treatment Strategies
+### Exercise Design Best Practices
 
-| Strategy | Application | Examples |
-|----------|------------|----------|
-| **Mitigate** | Cost-effective controls available | Patch management, access controls |
-| **Transfer** | Insurance or outsourcing viable | Cyber insurance, cloud services |
-| **Accept** | Low impact, high cost to mitigate | Legacy systems near retirement |
-| **Avoid** | Unacceptable risk levels | Discontinue risky services |
-
-### Business Impact Analysis Integration
-
-#### Critical System Dependencies
-- **Business Continuity Plan** integration for priority identification
-- **Recovery Time Objectives (RTO)** for each system classification
-- **Recovery Point Objectives (RPO)** for data loss tolerance
-- **Maximum Tolerable Downtime (MTD)** calculations
-
-#### Incident Prioritization Matrix
-When multiple incidents occur simultaneously:
-
-1. **Customer-facing systems** take priority over internal tools
-2. **Revenue-generating** systems prioritized over support systems  
-3. **Regulated data** systems require immediate attention
-4. **Safety-critical** systems override all other priorities
+| Element | Best Practice | Rationale |
+|---------|---------------|-----------|
+| **Objectives** | Specific, measurable, achievable goals | Ensures focused evaluation and improvement |
+| **Scenarios** | Based on realistic, organization-specific threats | Increases relevance and engagement |
+| **Scope** | Clearly defined boundaries and limitations | Prevents confusion and scope creep |
+| **Evaluation** | Structured observation and documentation | Enables objective assessment and learning |
+| **Follow-up** | Action items with owners and deadlines | Ensures exercise insights drive improvements |
 
 ---
 
-## Preparation Success Metrics
+## Tool and Technology Requirements
 
-### Readiness Indicators
-- **Team activation time**: < 30 minutes for critical incidents
-- **Plan currency**: Updated within last 6 months
-- **Training completion**: 100% of team members current
-- **Exercise frequency**: Quarterly tabletop and annual full-scale
+The right tools enable rapid detection, analysis, and response to security incidents.
 
-### Resource Availability
-- **Equipment readiness**: 100% functional and accessible
-- **Documentation accuracy**: < 5% outdated information
-- **Contact currency**: Monthly validation of all stakeholder contacts
-- **Budget allocation**: Sufficient for 72-hour sustained response
+### Essential IR Tool Categories
 
-Effective preparation dramatically improves incident response outcomes and reduces overall business impact.
+#### **Detection and Monitoring**
+- **SIEM Platform**: Centralized log collection and analysis
+- **Network Monitoring**: Traffic analysis and anomaly detection
+- **Endpoint Detection and Response (EDR)**: Host-based monitoring and response
+- **Threat Intelligence Platforms**: IOC management and enrichment
+
+#### **Analysis and Investigation**
+- **Digital Forensics Suite**: Evidence acquisition and analysis
+- **Malware Analysis Sandbox**: Safe execution environment for suspicious files
+- **Network Analysis Tools**: Packet capture and protocol analysis
+- **Memory Analysis Tools**: RAM dump acquisition and examination
+
+#### **Communication and Collaboration**
+- **Secure Communication Platform**: Encrypted messaging and file sharing
+- **Incident Management System**: Case tracking and workflow management  
+- **Knowledge Management**: Playbooks, procedures, and lessons learned
+- **Video Conferencing**: Remote collaboration capabilities
+
+#### **Containment and Recovery**
+- **Privileged Access Management**: Secure administrative access
+- **Backup and Recovery Systems**: Data restoration capabilities
+- **Configuration Management**: System state tracking and restoration
+- **Patch Management**: Rapid security update deployment
+
+### Tool Selection Criteria
+
+```
+Evaluation Framework:
+┌─────────────────────┬──────────────────────┐
+│ Functionality (40%) │ Does it meet our     │
+│                     │ technical needs?     │
+├─────────────────────┼──────────────────────┤
+│ Integration (25%)   │ Works with existing  │
+│                     │ infrastructure?      │
+├─────────────────────┼──────────────────────┤
+│ Usability (20%)     │ Can our team use it  │
+│                     │ effectively?         │  
+├─────────────────────┼──────────────────────┤
+│ Support (10%)       │ Vendor/community     │
+│                     │ support available?   │
+├─────────────────────┼──────────────────────┤
+│ Cost (5%)           │ Within budget        │
+│                     │ constraints?         │
+└─────────────────────┴──────────────────────┘
+```
+
+---
+
+## Communication Templates and Procedures
+
+Pre-written templates ensure consistent, accurate communication during high-stress situations.
+
+### Internal Communication Templates
+
+#### **Initial Incident Notification**
+```
+Subject: SECURITY INCIDENT - [Severity Level] - [Brief Description]
+
+INCIDENT SUMMARY:
+- Incident ID: INC-YYYY-NNNN
+- Severity: [Critical/High/Medium/Low]
+- Status: [Investigation/Containment/Recovery]
+- Affected Systems: [List primary systems]
+- Business Impact: [Description]
+
+CURRENT SITUATION:
+[2-3 sentences describing what is known]
+
+IMMEDIATE ACTIONS TAKEN:
+1. [Action 1]
+2. [Action 2]  
+3. [Action 3]
+
+NEXT STEPS:
+[1-2 sentences on planned activities]
+
+IR TEAM CONTACT: [Primary contact information]
+
+This is a confidential communication. Do not forward without authorization.
+```
+
+#### **Executive Status Update**
+```
+Subject: Security Incident Update - [Incident ID] - [Time/Date]
+
+EXECUTIVE SUMMARY:
+[2-3 sentences for C-suite consumption]
+
+BUSINESS IMPACT:
+- Customer Impact: [Current and projected]
+- Financial Impact: [Estimated costs and losses]
+- Regulatory/Legal: [Compliance implications]
+- Reputation: [Public/media considerations]
+
+CURRENT STATUS:
+- Containment: [% complete or status]
+- Investigation: [Key findings]
+- Recovery: [Timeline estimate]
+
+RESOURCE NEEDS:
+[Any additional resources or decisions needed]
+
+NEXT UPDATE: [Scheduled time for next communication]
+```
+
+### External Communication Templates
+
+#### **Customer Notification (Data Breach)**
+```
+Subject: Important Security Notice - [Organization Name]
+
+Dear [Customer Name],
+
+We are writing to inform you of a security incident that may have affected some of your personal information.
+
+WHAT HAPPENED:
+[Clear, non-technical explanation]
+
+WHAT INFORMATION WAS INVOLVED:
+[Specific data types affected]
+
+WHAT WE ARE DOING:
+[Response actions taken]
+
+WHAT YOU CAN DO:
+[Specific recommendations for customers]
+
+FOR MORE INFORMATION:
+[Contact details and resources]
+
+We sincerely apologize for this incident and any inconvenience it may cause.
+
+Sincerely,
+[Authorized spokesperson]
+```
+
+### Communication Protocols
+
+| Audience | Notification Trigger | Timeline | Method | Approval Required |
+|----------|---------------------|----------|---------|------------------|
+| **IT Leadership** | All incidents | Immediate | Secure messaging | IR Manager |
+| **Executive Team** | High/Critical severity | < 2 hours | Phone + email | Legal counsel |
+| **Legal Counsel** | Potential legal/regulatory impact | < 1 hour | Direct contact | IR Manager |
+| **Customers** | Data exposure confirmed | < 72 hours | Email + website | Executive + Legal |
+| **Regulators** | Regulatory thresholds met | Per regulation | Official filing | Legal counsel |
+| **Law Enforcement** | Criminal activity suspected | < 24 hours | Official reporting | Legal counsel |
+
+---
+
+## Incident Response Playbooks
+
+Playbooks provide step-by-step guidance for handling specific incident types.
+
+### Playbook Structure Template
+
+```markdown
+# [Incident Type] Response Playbook
+
+## Overview
+- **Incident Type**: [Specific category]
+- **Severity Typical Range**: [Expected severity levels]
+- **Key Stakeholders**: [Primary roles involved]
+
+## Pre-Incident Checklist
+- [ ] Required tools available and tested
+- [ ] Contact lists current
+- [ ] Authority and approvals documented
+
+## Detection Indicators
+- [Indicator 1]: [Description and threshold]
+- [Indicator 2]: [Description and threshold]
+- [Indicator 3]: [Description and threshold]
+
+## Response Procedures
+
+### Phase 1: Initial Response (0-1 hour)
+1. **Verify Incident** 
+   - [ ] Confirm indicators present
+   - [ ] Rule out false positives
+   - [ ] Document initial observations
+
+2. **Assess Scope**
+   - [ ] Identify affected systems
+   - [ ] Estimate business impact  
+   - [ ] Determine severity level
+
+3. **Activate Team**
+   - [ ] Notify IR team members
+   - [ ] Establish communication channels
+   - [ ] Brief management if required
+
+### Phase 2: Investigation (1-4 hours)
+[Detailed technical steps]
+
+### Phase 3: Containment (4-12 hours)  
+[Containment strategies and procedures]
+
+### Phase 4: Eradication (Timeline varies)
+[Threat elimination procedures]
+
+### Phase 5: Recovery (Timeline varies)
+[System restoration procedures]
+
+## Decision Points
+- [Decision Point 1]: [Criteria and options]
+- [Decision Point 2]: [Criteria and options]
+
+## Success Criteria
+- [ ] Threat eliminated
+- [ ] Systems restored to normal operation
+- [ ] Stakeholders informed appropriately
+- [ ] Evidence preserved for analysis
+
+## Lessons Learned Template
+[Post-incident review structure]
+```
+
+### Common Playbook Types
+
+| Playbook | Primary Focus | Key Considerations |
+|----------|---------------|-------------------|
+| **Malware Infection** | Containment and eradication | Network isolation, system imaging, malware analysis |
+| **Data Breach** | Legal compliance and communication | Regulatory notifications, customer communication, evidence preservation |
+| **Insider Threat** | Investigation and HR coordination | Employee rights, evidence handling, discretion |
+| **DDoS Attack** | Service restoration | ISP coordination, traffic filtering, customer communication |
+| **Phishing Campaign** | User protection and awareness | Email blocking, user education, credential security |
 
 [⬆️ Back to Incident Response](./README.md)
