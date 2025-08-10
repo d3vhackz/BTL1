@@ -321,7 +321,7 @@ Having completed BTL1, consider these next steps:
 
 ---
 
-*Successfully completed: January 2025*  
+*Successfully completed: August 2025*  
 *BTL1 Certification: ACHIEVED! 🏆*  
 *Total study investment: 200+ hours well spent*  
 
